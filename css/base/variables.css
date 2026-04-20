@@ -1,0 +1,49 @@
+:root {
+    --color-primary: #E07A7A;
+    --color-primary-dark: #C96464;
+    --color-primary-soft: #F2C4C4;
+    --color-accent-green: #7A9E7A;
+    --color-accent-green-light: #B5D4B5;
+    --color-accent-orange: #D4956A;
+    --color-accent-orange-light: #E8C9A8;
+    --color-accent-blue: #6B8EAF;
+    --color-accent-blue-light: #B8D0E5;
+
+    --color-text: #3D3428;
+    --color-text-secondary: #6B5D4D;
+    --color-text-muted: #9E8E7E;
+    --color-text-faint: #C4B8AC;
+
+    --color-surface: rgba(255, 252, 248, 0.88);
+    --color-surface-warm: rgba(255, 248, 240, 0.9);
+    --color-surface-card: rgba(255, 255, 252, 0.85);
+    --color-border: rgba(180, 165, 145, 0.25);
+    --color-border-strong: rgba(160, 140, 115, 0.35);
+    --color-divider: rgba(180, 165, 145, 0.3);
+
+    --color-nav-bg: #3D3D35;
+    --color-nav-text: #D8D0C4;
+
+    --shadow-sm: 0 1px 3px rgba(60, 45, 30, 0.06);
+    --shadow-md: 0 4px 16px rgba(60, 45, 30, 0.08);
+    --shadow-lg: 0 8px 32px rgba(60, 45, 30, 0.1);
+    --shadow-card: 0 2px 12px rgba(60, 45, 30, 0.06), 0 0 0 1px var(--color-border) inset;
+    --shadow-card-hover: 0 8px 24px rgba(60, 45, 30, 0.1), 0 0 0 1px var(--color-border-strong) inset;
+
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    --transition-fast: 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+    --transition-medium: 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+    --transition-slow: 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+
+    --font-display: "Georgia", "Noto Serif SC", "Source Han Serif SC", "STSong", serif;
+    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    --font-mono: "SF Mono", "Fira Code", "Consolas", monospace;
+
+    --page-max-width: 1100px;
+    --page-padding: clamp(24px, 5vw, 56px);
+}

@@ -1,0 +1,16 @@
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--color-text);
+}
+
+p {
+    line-height: 1.75;
+    color: var(--color-text-secondary);
+}
+
+::selection {
+    background: rgba(224, 122, 122, 0.2);
+    color: var(--color-text);
+}

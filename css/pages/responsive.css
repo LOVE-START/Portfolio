@@ -1,0 +1,146 @@
+/**
+ * 响应式适配 - 编辑式布局
+ */
+
+/* ====== 平板 (≤1100px) ====== */
+@media (max-width: 1100px) {
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .sidebar-decor {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        justify-content: center;
+        gap: 24px;
+        padding: 20px 28px;
+    }
+
+    .sidebar-illustration {
+        width: 120px;
+        aspect-ratio: 0.72;
+        flex-shrink: 0;
+    }
+
+    .hero-illustration {
+        max-height: 260px;
+    }
+
+    .site-header {
+        padding: 24px var(--page-padding) 18px;
+    }
+}
+
+/* ====== 手机大屏 (≤680px) ====== */
+@media (max-width: 680px) {
+    .header-decor-left {
+        display: none;
+    }
+
+    .brand-title {
+        font-size: clamp(26px, 8vw, 36px);
+        letter-spacing: 8px;
+        text-indent: 8px;
+    }
+
+    .brand-subtitle {
+        font-size: 9px;
+    }
+
+    .header-action-btn {
+        padding: 7px 14px;
+        font-size: 11px;
+    }
+
+    .nav-inner {
+        gap: 10px;
+    }
+
+    .nav-item {
+        font-size: 10px;
+    }
+
+    .nav-right-label {
+        display: none;
+    }
+
+    .hero-illustration {
+        max-height: 200px;
+    }
+
+    .hero-visual-inline {
+        flex-direction: column;
+        text-align: center;
+        gap: 18px;
+        padding: 32px 24px;
+    }
+
+    .hero-logo-ring {
+        width: 80px;
+        height: 80px;
+    }
+
+    .main-content {
+        padding: 28px var(--page-padding) 44px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .project-card {
+        padding: 20px 18px 17px;
+    }
+
+    .sidebar-decor {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .sidebar-illustration {
+        width: 100%;
+        max-width: 140px;
+    }
+
+    .detail-scroll-content {
+        padding: 0 20px 48px;
+    }
+
+    .detail-hero-frame {
+        padding: 32px 24px;
+    }
+
+    .back-button {
+        margin: 14px 20px;
+    }
+}
+
+/* ====== 小屏手机 (≤400px) ====== */
+@media (max-width: 400px) {
+    :root {
+        --page-padding: 18px;
+    }
+
+    .brand-title {
+        letter-spacing: 5px;
+        text-indent: 5px;
+    }
+
+    .site-nav {
+        margin: 0 var(--page-padding);
+        padding: 8px 16px;
+    }
+
+    .hero-illustration {
+        max-height: 160px;
+    }
+
+    .project-card {
+        padding: 18px 16px 15px;
+    }
+
+    .card-body-text {
+        -webkit-line-clamp: 2;
+    }
+}

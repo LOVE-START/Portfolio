@@ -1,0 +1,97 @@
+.qrcode-section {
+    text-align: center;
+    margin: 25px auto;
+    padding: 20px;
+    background: rgba(255, 248, 248, 0.7);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 15px rgba(230, 111, 134, 0.08);
+    position: relative;
+    overflow: hidden;
+    border: 1px dashed rgba(230, 111, 134, 0.3);
+    max-width: 85%;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.qrcode-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(230, 111, 134, 0.12);
+}
+
+.qrcode-section::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><path d="M80,20 Q85,20 85,25 L85,75 Q85,80 80,80 L20,80 Q15,80 15,75 L15,25 Q15,20 20,20 Z" fill="none" stroke="%23FF8FA3" stroke-width="2" stroke-dasharray="5 5"/></svg>');
+    background-size: cover;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.qrcode-section p {
+    font-size: 16px;
+    color: var(--color-text-light);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.qrcode-container {
+    position: relative;
+    display: inline-block;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    padding: 8px;
+    background: var(--color-white);
+    box-shadow: 0 6px 12px rgba(230, 111, 134, 0.12);
+    border: 1px solid rgba(230, 111, 134, 0.1);
+}
+
+.qrcode-img {
+    width: 160px;
+    height: 160px;
+    border-radius: var(--border-radius-sm);
+    transition: transform var(--transition-fast);
+}
+
+.qrcode-shimmer {
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 250%;
+    height: 250%;
+    background: linear-gradient(
+        315deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 30%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 6s infinite linear;
+    transform: rotate(30deg);
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateY(100%) translateX(100%) rotate(30deg);
+    }
+    100% {
+        transform: translateY(-100%) translateX(-100%) rotate(30deg);
+    }
+}
+
+.qr-heart {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,80 C90,50 90,10 50,40 C10,10 10,50 50,80 Z" fill="%23FF8FA3" stroke="%23883344" stroke-width="2" /></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    opacity: 0.8;
+}

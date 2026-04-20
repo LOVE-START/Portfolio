@@ -1,0 +1,24 @@
+.particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 200;
+    opacity: 0.8;
+}
+
+.particle.heart {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,80 C90,50 90,10 50,40 C10,10 10,50 50,80 Z" fill="%23FF8FA3" stroke="%23883344" stroke-width="1" /></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent !important;
+}
+
+.particle.star {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,10 L61,40 L93,40 L67,60 L77,90 L50,70 L23,90 L33,60 L7,40 L39,40 L50,10" fill="%23FFEB3B" stroke="%23FFA000" stroke-width="1" /></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent !important;
+}
+
+.particle.circle {
+    border-radius: 50%;
+}
