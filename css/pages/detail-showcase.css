@@ -207,6 +207,10 @@
     top: 86px;
 }
 
+.sidebar-sticky > * {
+    transition: margin-bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .gallery-label {
     display: flex;
     align-items: center;
@@ -242,6 +246,7 @@
     border: 1.5px solid rgba(140,125,100,0.2);
     transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
     background: var(--color-surface);
+    opacity: 1;
 }
 
 .gallery-item:hover {
@@ -457,27 +462,81 @@
 }
 
 .body-section-highlight {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    padding: 28px 24px;
-    background: linear-gradient(135deg, rgba(200, 180, 160, 0.08), rgba(200, 180, 160, 0.03));
-    border-radius: 2px;
-    border-left: 3px solid rgba(180,160,140,0.4);
+    position: relative;
+    padding: 32px 36px 28px;
+    background: linear-gradient(180deg, #fefdfb 0%, #f9f6f1 100%);
+    border-radius: 4px;
+    box-shadow: 
+        0 1px 3px rgba(0,0,0,0.04),
+        0 8px 24px rgba(0,0,0,0.06),
+        inset 0 0 0 1px rgba(200,180,160,0.15);
+    overflow: hidden;
+}
+
+.body-section-highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        transparent,
+        transparent 27px,
+        rgba(180,160,140,0.12) 27px,
+        rgba(180,160,140,0.12) 28px
+    );
+    pointer-events: none;
+}
+
+.body-section-highlight::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        rgba(200,180,160,0.3) 0%, 
+        rgba(220,200,180,0.5) 50%, 
+        rgba(200,180,160,0.3) 100%
+    );
 }
 
 .highlight-icon {
-    font-size: 22px;
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    font-size: 18px;
     color: #c4a882;
-    flex-shrink: 0;
-    margin-top: 3px;
-    opacity: 0.8;
+    opacity: 0.5;
 }
 
 .section-text-accent {
-    color: #8a7f72;
+    color: #6b5d4d;
     font-style: italic;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
+    line-height: 28px;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-signature {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 11px;
+    font-style: italic;
+    color: #b0a89d;
+    letter-spacing: 0.5px;
+    opacity: 0.6;
+    margin: 0;
+    margin-left: auto;
+    margin-right: 24px;
+}
+
+.contact-divider {
+    margin: 0 10px;
 }
 
 .feature-list {
@@ -569,6 +628,8 @@
     height: 180px;
     object-fit: contain;
     border-radius: 2px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .qrcode-hint {
@@ -601,6 +662,7 @@
     border: 2px solid rgba(160, 145, 120, 0.28);
     border-radius: 4px;
     transition: all var(--transition-fast);
+    opacity: 1;
 }
 
 .contact-card:hover {
@@ -649,25 +711,6 @@
 .sidebar-qrcode .qrcode-hint {
     font-size: 11px;
     margin-top: 12px;
-}
-
-.sidebar-contact {
-    margin-top: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.sidebar-contact .contact-card {
-    padding: 14px 16px;
-}
-
-.sidebar-contact .contact-label {
-    font-size: 9px;
-}
-
-.sidebar-contact .contact-value {
-    font-size: 12px;
 }
 
 /* ========== Right Visual Area (empty / image visible through gradient) ========== */
@@ -752,6 +795,7 @@
     transition: all var(--transition-medium);
     position: relative;
     overflow: hidden;
+    opacity: 1;
 }
 
 .related-card::before {
