@@ -1,0 +1,1099 @@
+/**
+ * Detail Page Styles - Magazine Editorial Layout
+ * 杂志风格详情页 - 新配色方案
+ * 
+ * 颜色方案:
+ * - 背景主色: #fdf7e9
+ * - 主色调（按钮/强调）: #E6A87B
+ * - 辅助色（植物元素）: #D9B89B
+ * - 线条/文字色: #5C4B44
+ * - 点缀色（腮红/装饰）: #F7C5B5
+ * - 中性色（插画色块）: #D9B89B
+ */
+
+/* ========== Page Foundation ========== */
+.detail-page {
+    min-height: 100vh;
+    background: #fdf7e9;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.detail-page .background {
+    background: #fdf7e9;
+    animation: none;
+}
+
+.detail-page .dynamic-glow {
+    display: none;
+}
+
+/* ========== Top Brand Bar ========== */
+.detail-top-bar {
+    background: #1a1a1a;
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 200;
+}
+
+.detail-top-bar .brand-text {
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: rgba(255, 250, 245, 0.92);
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* ========== Header Navigation ========== */
+.detail-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 40px;
+    background: rgba(253, 247, 233, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(92, 75, 68, 0.12);
+}
+
+.detail-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: #E6A87B;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: all 0.25s ease;
+    background: transparent;
+    border: 1px solid rgba(230, 168, 123, 0.3);
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    background: rgba(230, 168, 123, 0.1);
+    border-color: rgba(230, 168, 123, 0.5);
+}
+
+.back-btn svg { width: 16px; height: 16px; }
+
+.header-brand-info { display: flex; flex-direction: column; gap: 2px; }
+
+.brand-main-name {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #5C4B44;
+    margin: 0;
+}
+
+.brand-sub-name {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #D9B89B;
+    margin: 0;
+}
+
+.detail-header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-nav-link {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #5C4B44;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: all 0.25s ease;
+}
+
+.header-nav-link:hover { color: #E6A87B; background: rgba(255, 255, 255, 0.7); }
+
+.header-action-btn {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 7px 18px;
+    border: 1px solid rgba(92, 75, 68, 0.2);
+    border-radius: 20px;
+    color: #5C4B44;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    background: transparent;
+}
+
+.header-action-btn:hover {
+    background: rgba(230, 168, 123, 0.1);
+    border-color: #E6A87B;
+    color: #E6A87B;
+}
+
+/* ========== Main Content Area ========== */
+.detail-main {
+    position: relative;
+    max-width: 1500px;
+    margin: 24px auto 0;
+    padding: 28px 32px 40px;
+    display: block;
+    border: 1.5px solid rgba(92, 75, 68, 0.12);
+    border-radius: 20px;
+    background: transparent;
+    box-shadow: 0 4px 30px rgba(92, 75, 68, 0.05);
+    overflow: hidden;
+}
+
+.magazine-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr 300px;
+    gap: 28px;
+    position: relative;
+    z-index: 3;
+    min-height: calc(100vh - 200px);
+}
+
+/* ============================================================
+   LEFT COLUMN - Content Area (图文混排)
+   ============================================================ */
+.detail-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
+}
+
+.sidebar-sticky { position: sticky; top: 86px; }
+
+/* 小图标卡片 */
+.left-icon-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 18px 14px;
+    background: #FFFEFB;
+    border: 1.5px solid rgba(92, 75, 68, 0.12);
+    border-radius: 16px;
+    text-align: center;
+}
+
+.lic-icon-wrap {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F7C5B5;
+    border: 1.5px solid rgba(92, 75, 68, 0.15);
+    border-radius: 12px;
+}
+
+.lic-icon { font-size: 22px; }
+.lic-label {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #5C4B44;
+    font-weight: 600;
+}
+.lic-sub {
+    font-family: var(--font-body);
+    font-size: 9px;
+    color: #D9B89B;
+}
+
+/* 植物装饰卡片 */
+.left-plant-card {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 14px;
+    background: #D9B89B;
+    border: 1.5px solid rgba(92, 75, 68, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+    min-height: 80px;
+}
+
+.lpc-img {
+    width: 65px;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.45;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.lpc-label {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #5C4B44;
+    background: rgba(255,252,248,0.85);
+    padding: 4px 10px;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+/* 文字内容块 */
+.left-text-block {
+    padding: 20px 18px;
+    background: #fef8ef;
+    border: 1.5px solid rgba(92, 75, 68, 0.12);
+    border-radius: 16px;
+}
+
+.ltb-heading {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #5C4B44;
+    margin: 0 0 10px;
+    font-weight: 600;
+}
+
+.ltb-text {
+    font-size: 12px;
+    line-height: 1.85;
+    color: #5C4B44;
+    margin: 0 0 10px;
+}
+
+.ltb-more {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 9px;
+    color: #E6A87B;
+    cursor: pointer;
+}
+
+/* 左色块+右插图 组合卡片 */
+.left-split-card {
+    display: flex;
+    gap: 0;
+    border: 1.5px solid rgba(92, 75, 68, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.lsc-color-panel {
+    flex: 1;
+    padding: 12px 14px;
+    background: #ebd8ba;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.lsc-title {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #5C4B44;
+    margin: 0;
+    font-weight: 600;
+}
+
+.lsc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.lsc-list li {
+    font-size: 11px;
+    color: #5C4B44;
+    line-height: 1.5;
+    padding-left: 10px;
+    position: relative;
+}
+
+.lsc-list li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: #5C4B44;
+}
+
+.lsc-tag {
+    align-self: flex-start;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: #fff;
+    background: #E6A87B;
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-top: auto;
+}
+
+.lsc-image-panel {
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F7C5B5;
+    padding: 0;
+    overflow: hidden;
+}
+
+.lsc-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 信件风格文字块 */
+.left-quote-block {
+    position: relative;
+    padding: 24px 32px 24px 32px;
+    margin: 0 -12px;
+    background: 
+        linear-gradient(135deg, rgba(255,254,251,0.9) 0%, rgba(253,247,233,0.95) 100%),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(92, 75, 68, 0.015) 2px,
+            rgba(92, 75, 68, 0.015) 4px
+        );
+    border: 1px solid rgba(92, 75, 68, 0.08);
+    border-radius: 6px;
+    box-shadow: 
+        0 1px 3px rgba(92, 75, 68, 0.08),
+        0 4px 12px rgba(92, 75, 68, 0.04),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.left-quote-block::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: -10px;
+    width: 4px;
+    background: linear-gradient(180deg, 
+        transparent 0%,
+        #D9B89B 15%,
+        #E6A87B 50%,
+        #D9B89B 85%,
+        transparent 100%
+    );
+    border-radius: 2px;
+}
+
+.left-quote-block::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    right: -10px;
+    width: 4px;
+    background: linear-gradient(180deg, 
+        transparent 0%,
+        #D9B89B 15%,
+        #E6A87B 50%,
+        #D9B89B 85%,
+        transparent 100%
+    );
+    border-radius: 2px;
+}
+
+.lqb-by {
+    font-family: 'Brush Script MT', 'Brush Script Std', 'Segoe Script', cursive;
+    font-size: 12px;
+    color: #E6A87B;
+    opacity: 0.8;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.lqb-text {
+    font-family: 'Brush Script MT', 'Brush Script Std', 'Segoe Script', cursive;
+    font-size: 13px;
+    line-height: 1.85;
+    color: #5C4B44;
+    margin: 0 0 8px;
+}
+
+.lqb-signature {
+    display: block;
+    text-align: right;
+    font-family: 'Brush Script MT', 'Brush Script Std', 'Segoe Script', cursive;
+    font-size: 11px;
+    color: #D9B89B;
+    margin-top: 8px;
+}
+
+/* ============================================================
+   CENTER COLUMN - Hero + Title
+   ============================================================ */
+.detail-center {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.hero-illustration-frame {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 2.5px solid rgba(92, 75, 68, 0.2);
+    background: #FFFEFA;
+    box-shadow:
+        0 12px 40px rgba(92, 75, 68, 0.08),
+        0 4px 12px rgba(92, 75, 68, 0.04),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.hero-illustration-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.frame-corner-decor {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border: 2px solid rgba(92, 75, 68, 0.25);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.frame-corner-tl { top: 13px; left: 13px; border-right: none; border-bottom: none; border-radius: 6px 0 0 0; }
+.frame-corner-tr { top: 13px; right: 13px; border-left: none; border-bottom: none; border-radius: 0 6px 0 0; }
+.frame-corner-bl { bottom: 13px; left: 13px; border-right: none; border-top: none; border-radius: 0 0 0 6px; }
+.frame-corner-br { bottom: 13px; right: 13px; border-left: none; border-top: none; border-radius: 0 0 6px 0; }
+
+.project-title-section {
+    text-align: center;
+    padding: 20px 0 10px;
+}
+
+.title-decor-line {
+    width: 70px;
+    height: 2px;
+    background: rgba(230, 168, 123, 0.4);
+    margin: 0 auto 18px;
+}
+
+.project-title {
+    font-family: Georgia, 'Noto Serif SC', 'Playfair Display', serif;
+    font-size: clamp(34px, 4vw, 52px);
+    font-weight: 700;
+    color: #5C4B44;
+    letter-spacing: 10px;
+    margin: 0 0 12px;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.project-subtitle {
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: #D9B89B;
+    letter-spacing: 2.5px;
+    margin: 0;
+    font-style: italic;
+    font-weight: 300;
+}
+
+/* Action Pills */
+.action-pills-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.action-pill {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 7px 20px;
+    border: 1.5px solid rgba(92, 75, 68, 0.2);
+    border-radius: 20px;
+    color: #5C4B44;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.action-pill:hover {
+    border-color: #E6A87B;
+    color: #E6A87B;
+    background: rgba(230, 168, 123, 0.08);
+}
+
+.action-pill.active {
+    background: #E6A87B;
+    border-color: #E6A87B;
+    color: #fff;
+}
+
+/* QR Card Container - 二维码卡片容器 */
+.qr-card-container {
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1.5px solid rgba(92, 75, 68, 0.12);
+}
+
+.qr-card-bg {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+.qr-code-img {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(92, 75, 68, 0.1);
+    /* ===== 位置调整参数 ===== */
+    bottom: 48px;
+    right: 55px;
+    /* top: auto;    */
+    /* left: auto;   */
+    /* ======================= */
+}
+
+.qr-wish-text {
+    position: absolute;
+    font-family: 'Brush Script MT', 'Brush Script Std', 'Segoe Script', 'Comic Sans MS', cursive;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #5C4B44;
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.qr-wish-line1 {
+    /* ===== 第一行位置调整 ===== */
+    bottom: 270px;
+    right: 60px;
+    /* top: auto;    */
+    /* left: auto;   */
+    /* ========================== */
+}
+
+.qr-wish-line2 {
+    /* ===== 第二行位置调整 ===== */
+    bottom: 250px;
+    right: 60px;
+    /* top: auto;    */
+    /* left: auto;   */
+    /* ========================== */
+}
+
+/* ============================================================
+   RIGHT COLUMN - Decorative Grid (装饰小格子)
+   ============================================================ */
+.detail-right-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.right-sticky { position: sticky; top: 86px; }
+
+/* 顶部大图标卡 (暖色背景) */
+.right-hero-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1.5px solid rgba(92, 75, 68, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+    background: #E6A87B;
+}
+
+.rhc-icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 18px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.rhc-icon {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    opacity: 0.9;
+    transform: scale(1.8);
+}
+
+.rhc-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 12px 18px 16px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.rhc-title {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.rhc-sub {
+    font-family: var(--font-body);
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 1px;
+}
+
+/* 双列信息标签 */
+.right-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.rig-item {
+    padding: 12px 10px;
+    background: #FFFEFB;
+    border: 1.5px solid rgba(92, 75, 68, 0.12);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.rig-label {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #D9B89B;
+}
+
+.rig-value {
+    font-size: 11px;
+    color: #5C4B44;
+    font-weight: 500;
+}
+
+.rig-live { color: #E6A87B; }
+
+/* 大装饰图区域 */
+.right-illustration-card {
+    border: 1.5px solid rgba(92, 75, 68, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+    background: #FFFEFB;
+}
+
+.ric-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 16px;
+    background: #D9B89B;
+    min-height: 100px;
+}
+
+.ric-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 90px;
+    object-fit: contain;
+    opacity: 0.5;
+}
+
+.ric-info {
+    padding: 14px 16px 16px;
+}
+
+.ric-heading {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #5C4B44;
+    margin: 0 0 6px;
+    font-weight: 600;
+}
+
+.ric-desc {
+    font-size: 11px;
+    line-height: 1.6;
+    color: #5C4B44;
+    margin: 0;
+}
+
+/* 文字信息卡片 */
+.right-text-card {
+    padding: 16px 14px;
+    background: #FFFEFB;
+    border: 1.5px solid rgba(92, 75, 68, 0.12);
+    border-radius: 14px;
+}
+
+.rtc-heading {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #5C4B44;
+    margin: 0 0 8px;
+    font-weight: 600;
+}
+
+.rtc-text {
+    font-size: 12px;
+    line-height: 1.65;
+    color: #5C4B44;
+    margin: 0;
+}
+
+/* 大面积叶子装饰背景区 */
+.right-decor-bg {
+    position: relative;
+    padding: 20px 16px;
+    background: #D9B89B;
+    border: 1.5px solid rgba(92, 75, 68, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+    min-height: 140px;
+}
+
+.rdb-leaf {
+    position: absolute;
+    opacity: 0.18;
+}
+
+.rdb-l1 { top: 10px; left: 8px; font-size: 36px; transform: rotate(-15deg); }
+.rdb-l2 { top: 40%; right: 5px; font-size: 30px; transform: rotate(20deg); }
+.rdb-l3 { bottom: 15px; left: 25%; font-size: 28px; transform: rotate(10deg); }
+
+.rdb-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.rdb-title {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #5C4B44;
+    margin: 0;
+}
+
+.rdb-mini-card {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #D9B89B;
+    border: 1.5px solid rgba(92, 75, 68, 0.15);
+    border-radius: 12px;
+}
+
+.rdb-mc-icon { font-size: 24px; opacity: 0.5; }
+
+/* ============================================================
+   BOTTOM MAGAZINE SECTION (底部横向排版)
+   ============================================================ */
+.bottom-magazine-section {
+    position: relative;
+    z-index: 10;
+    max-width: 1500px;
+    margin: 28px auto 0;
+    padding: 0 32px 20px;
+}
+
+.bms-inner {
+    display: grid;
+    grid-template-columns: 280px 180px 1fr;
+    gap: 20px;
+    align-items: start;
+    position: relative;
+}
+
+/* 左侧大插画 */
+.bms-left-illustration {
+    position: relative;
+    border: 1.5px solid rgba(92, 75, 68, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: #D9B89B;
+}
+
+.bli-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bli-decor {
+    position: absolute;
+    font-size: 18px;
+    opacity: 0.3;
+}
+
+.bli-decor-tl { top: 10px; left: 10px; }
+.bli-decor-br { bottom: 10px; right: 10px; }
+
+/* 中间圆形元素 */
+.bms-center-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-top: 20px;
+}
+
+.bcc-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #D9B89B;
+    border: 2px solid rgba(92, 75, 68, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(92, 75, 68, 0.1);
+}
+
+.bcc-img { width: 56px; height: 56px; object-fit: contain; transform: scale(1.2); }
+
+.bcc-scatter {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.bcc-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #E6A87B;
+    opacity: 0.4;
+}
+
+.bcc-sprinkle { font-size: 12px; color: #E6A87B; opacity: 0.3; }
+
+/* 右侧多卡片区域 */
+.bms-right-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.brc-top-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brc-pill {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    padding: 5px 16px;
+    background: #fac3b9;
+    color: #fff;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.brc-search-bar {
+    flex: 1;
+    padding: 6px 14px;
+    background: #FFFEFB;
+    border: 1.5px solid rgba(92, 75, 68, 0.12);
+    border-radius: 12px;
+}
+
+.brc-search-placeholder {
+    font-family: var(--font-body);
+    font-size: 11px;
+    color: #D9B89B;
+}
+
+.brc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.brc-card {
+    padding: 14px 12px;
+    background: #FFFEFB;
+    border: 1.5px solid rgba(92, 75, 68, 0.12);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.brc-card:hover {
+    border-color: rgba(230, 168, 123, 0.4);
+    transform: translateY(-2px);
+}
+
+.brc-card-wide { grid-column: span 2; }
+
+.brc-card-title {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #5C4B44;
+    margin: 0 0 4px;
+    font-weight: 600;
+}
+
+.brc-card-desc {
+    font-size: 10px;
+    color: #5C4B44;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.brc-card-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 12px;
+}
+
+.brc-prod-img {
+    width: 100%;
+    max-width: 60px;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.4;
+}
+
+.brc-prod-label {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 8px;
+    color: #D9B89B;
+    letter-spacing: 1px;
+}
+
+.brc-card-highlight {
+    background: #D9B89B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.brc-hl-text {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 9px;
+    line-height: 1.6;
+    color: #5C4B44;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.detail-footer {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 24px 20px 32px;
+    border-top: 1px solid rgba(92, 75, 68, 0.12);
+    background: #fdf7e9;
+}
+
+.detail-footer p {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #D9B89B;
+    margin: 0;
+}
+
+/* ============================================================
+   Responsive Design
+   ============================================================ */
+@media (max-width: 1280px) {
+    .detail-main { padding: 22px 26px 36px; margin: 22px auto 0; }
+    .magazine-grid { grid-template-columns: 200px 1fr 280px; gap: 24px; }
+    .bms-inner { grid-template-columns: 220px 150px 1fr; gap: 16px; }
+}
+
+@media (max-width: 1024px) {
+    .detail-main { padding: 18px 22px 32px; border-radius: 18px; margin: 18px auto 0; }
+    .magazine-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+
+    .detail-sidebar { order: -1; grid-column: span 2; }
+    .sidebar-sticky { position: static; }
+
+    .detail-right-sidebar { display: none; }
+
+    .bottom-magazine-section { display: none; }
+}
+
+@media (max-width: 768px) {
+    .detail-main { padding: 14px 16px 26px; border-radius: 16px; margin: 14px auto 0; }
+    .magazine-grid { grid-template-columns: 1fr; padding: 20px 14px 40px; gap: 24px; }
+    .detail-sidebar { order: -1; }
+    .project-title { letter-spacing: 4px; }
+
+    .detail-header { flex-wrap: wrap; gap: 12px; padding: 10px 16px; }
+    .detail-header-left { flex-basis: 100%; justify-content: center; }
+    .detail-header-right { order: 3; flex-basis: 100%; justify-content: center; flex-wrap: wrap; }
+    .header-action-btn { display: none; }
+
+    .left-split-card { flex-direction: column; }
+    .lsc-image-panel { width: 100%; min-height: 70px; }
+}
+
+@media (max-width: 640px) {
+    .detail-main { padding: 12px 12px 20px; border-radius: 14px; margin: 12px auto 0; max-width: calc(100% - 8px); }
+    .detail-top-bar .brand-text { font-size: 9px; letter-spacing: 4px; }
+    .magazine-grid { padding: 14px 11px 32px; }
+    .project-title { font-size: 26px; letter-spacing: 3px; }
+}

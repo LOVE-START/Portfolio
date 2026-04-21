@@ -30,21 +30,13 @@ export function initCardInteractions(cards, cardLinks) {
             if (e.target.closest('.card-link')) return;
             const projectId = this.dataset.project;
             if (projectId) {
-                document.dispatchEvent(new CustomEvent('showDetail', { detail: { projectId } }));
+                window.location.href = `${projectId}.html`;
             }
         });
     });
 
     if (cardLinks && cardLinks.length > 0) {
         cardLinks.forEach(link => {
-            link.addEventListener("click", function(e) {
-                e.stopPropagation();
-                const projectId = this.dataset.project;
-                if (projectId) {
-                    document.dispatchEvent(new CustomEvent('showDetail', { detail: { projectId } }));
-                }
-            });
-
             link.addEventListener("mouseenter", function() {
                 gsap.to(this.querySelector('svg'), {
                     x: 4,
@@ -70,14 +62,9 @@ export function initNavInteractions(navItems) {
     navItems.forEach(item => {
         item.addEventListener("click", function() {
             const filter = this.dataset.filter;
-            const project = this.dataset.project;
 
             navItems.forEach(n => n.classList.remove('nav-item-active'));
             this.classList.add('nav-item-active');
-
-            if (project) {
-                document.dispatchEvent(new CustomEvent('showDetail', { detail: { projectId: project } }));
-            }
         });
     });
 }

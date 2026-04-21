@@ -16,8 +16,6 @@
     
     <!-- CSS Components -->
     <link rel="stylesheet" href="css/components/buttons.css">
-    <link rel="stylesheet" href="css/components/logo.css">
-    <link rel="stylesheet" href="css/components/qrcode.css">
     <link rel="stylesheet" href="css/components/decorations.css">
     
     <!-- CSS Effects -->
@@ -28,7 +26,6 @@
     <!-- CSS Pages -->
     <link rel="stylesheet" href="css/pages/home.css">
     <link rel="stylesheet" href="css/pages/cards.css">
-    <link rel="stylesheet" href="css/pages/detail.css">
     <link rel="stylesheet" href="css/pages/responsive.css">
     
     <!-- GSAP Library -->
@@ -130,10 +127,10 @@
                 <p class="card-body-text">南苑课表管理小程序，帮你轻松掌握每一节课的安排。从清晨到傍晚，记录校园生活的每一个美好瞬间。</p>
                 <div class="card-footer">
                     <span class="card-tag">Schedule</span>
-                    <span class="card-link" data-project="course">
+                    <a href="coursedetial.html" class="card-link">
                         View Detail
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </span>
+                    </a>
                 </div>
             </article>
 
@@ -147,10 +144,10 @@
                 <p class="card-body-text">南苑社团探索平台，发现校园里每一个有趣的社团活动。找到志同道合的朋友，一起追逐热爱。</p>
                 <div class="card-footer">
                     <span class="card-tag card-tag-blue">Community</span>
-                    <span class="card-link" data-project="nest">
+                    <a href="nestdetial.html" class="card-link">
                         View Detail
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </span>
+                    </a>
                 </div>
             </article>
 
@@ -164,10 +161,10 @@
                 <p class="card-body-text">南苑美食图鉴，探索校园里的每一处美味角落。用味蕾记录大学生活的点滴幸福。</p>
                 <div class="card-footer">
                     <span class="card-tag card-tag-orange">Food Guide</span>
-                    <span class="card-link" data-project="yummy">
+                    <a href="yummydetial.html" class="card-link">
                         View Detail
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </span>
+                    </a>
                 </div>
             </article>
 
@@ -181,10 +178,10 @@
                 <p class="card-body-text">南苑地图小程序，一键探索校园每个角落。教学楼、食堂、图书馆，想去哪里都能找到。</p>
                 <div class="card-footer">
                     <span class="card-tag card-tag-green">Map</span>
-                    <span class="card-link" data-project="spot">
+                    <a href="spotdetial.html" class="card-link">
                         View Detail
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </span>
+                    </a>
                 </div>
             </article>
 
@@ -204,229 +201,6 @@
         <a href="https://beian.miit.gov.cn/" target="_blank" class="beian-link">粤ICP备2025389961号</a>
     </footer>
 
-</div>
-
-<!-- ========== 详情页：Course ========== -->
-<div class="detail-page hidden" id="detail-course">
-    <button class="back-button" data-back="home">
-        <span class="back-icon">←</span>
-        <span class="back-text">Back</span>
-    </button>
-
-    <div class="detail-scroll-content">
-        <section class="detail-hero">
-            <div class="detail-hero-frame">
-                <div class="hero-visual-inline">
-                    <div class="hero-logo-ring">
-                        <img src="https://s3.bmp.ovh/imgs/2025/03/29/b1015c8b5f09841c.png" alt="NFUCourse" class="hero-logo">
-                    </div>
-                    <div class="hero-info">
-                        <span class="hero-badge">Featured</span>
-                        <h2 class="hero-title">NFUCourse</h2>
-                        <p class="hero-subtitle">南苑课表 · 陪伴你走过最美好的大学时光</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="detail-body">
-            <div class="detail-description">
-                <p>在微信搜索小程序「南苑Course」就可以使用啦！</p>
-                <p>希望南苑课表能陪伴你走过最美好最温暖的大学时光</p>
-                <p>如果你有好的设计想法，超级欢迎与我分享哦！</p>
-            </div>
-
-            <div class="detail-qrcode-block">
-                <p class="qrcode-label">Scan to Experience</p>
-                <div class="qrcode-box">
-                    <img src="https://nfu2006.asia/miniprogram.jpg" alt="小程序码" class="qrcode-img">
-                    <div class="qrcode-shimmer"></div>
-                </div>
-            </div>
-
-            <div class="detail-contact">
-                <p class="contact-heading">Contact</p>
-                <div class="contact-grid">
-                    <div class="contact-item">
-                        <span class="contact-key">Wechat</span>
-                        <span class="contact-val">Zero__Night</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-key">Email</span>
-                        <span class="contact-val">candy_night@163.com</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-</div>
-
-<!-- ========== 详情页：Nest ========== -->
-<div class="detail-page hidden" id="detail-nest">
-    <button class="back-button" data-back="home">
-        <span class="back-icon">←</span>
-        <span class="back-text">Back</span>
-    </button>
-
-    <div class="detail-scroll-content">
-        <section class="detail-hero">
-            <div class="detail-hero-frame">
-                <div class="detail-hero-logo-placeholder nest-detail-ph">
-                    <img src="images/whitenest.png" alt="NFUNest" class="icon-img-green" width="56" height="56">
-                </div>
-                <div class="detail-hero-text">
-                    <h1 class="detail-title">NFUNest</h1>
-                    <span class="detail-badge detail-badge-green">南苑社团</span>
-                </div>
-            </div>
-        </section>
-
-        <section class="detail-body">
-            <div class="detail-description">
-                <p>发现校园里每一个有趣的社团活动</p>
-                <p>在这里找到志同道合的朋友，一起追逐热爱</p>
-                <p>社团生活，从这里开始精彩！</p>
-            </div>
-
-            <div class="detail-qrcode-block detail-qrcode-coming">
-                <p class="qrcode-label qrcode-label-coming">Coming Soon</p>
-                <div class="qrcode-box qrcode-placeholder-box">
-                    <div class="placeholder-content">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-                            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="3" height="3"/><rect x="18" y="14" width="3" height="3"/><rect x="14" y="18" width="3" height="3"/><rect x="18" y="18" width="3" height="3"/>
-                        </svg>
-                        <span>即将上线</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="detail-contact">
-                <p class="contact-heading">Contact</p>
-                <div class="contact-grid">
-                    <div class="contact-item">
-                        <span class="contact-key">Wechat</span>
-                        <span class="contact-val">Zero__Night</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-key">Email</span>
-                        <span class="contact-val">candy_night@163.com</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-</div>
-
-<!-- ========== 详情页：Yummy ========== -->
-<div class="detail-page hidden" id="detail-yummy">
-    <button class="back-button" data-back="home">
-        <span class="back-icon">←</span>
-        <span class="back-text">Back</span>
-    </button>
-
-    <div class="detail-scroll-content">
-        <section class="detail-hero">
-            <div class="detail-hero-frame">
-                <div class="detail-hero-logo-placeholder yummy-detail-ph">
-                    <img src="images/whiteyummy.png" alt="NFUYummy" class="icon-img-green" width="56" height="56">
-                </div>
-                <div class="detail-hero-text">
-                    <h1 class="detail-title">NFUYummy</h1>
-                    <span class="detail-badge detail-badge-orange">南苑美食</span>
-                </div>
-            </div>
-        </section>
-
-        <section class="detail-body">
-            <div class="detail-description">
-                <p>探索校园里的每一处美味角落</p>
-                <p>用味蕾记录大学生活的点滴幸福</p>
-                <p>每一份美食，都值得被记住！</p>
-            </div>
-
-            <div class="detail-qrcode-block detail-qrcode-coming">
-                <p class="qrcode-label qrcode-label-coming">Coming Soon</p>
-                <div class="qrcode-box qrcode-placeholder-box">
-                    <div class="placeholder-content">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-                            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="3" height="3"/><rect x="18" y="14" width="3" height="3"/><rect x="14" y="18" width="3" height="3"/><rect x="18" y="18" width="3" height="3"/>
-                        </svg>
-                        <span>即将上线</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="detail-contact">
-                <p class="contact-heading">Contact</p>
-                <div class="contact-grid">
-                    <div class="contact-item">
-                        <span class="contact-key">Wechat</span>
-                        <span class="contact-val">Zero__Night</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-key">Email</span>
-                        <span class="contact-val">candy_night@163.com</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-</div>
-
-<!-- ========== 详情页：Spot ========== -->
-<div class="detail-page hidden" id="detail-spot">
-    <button class="back-button" data-back="home">
-        <span class="back-icon">←</span>
-        <span class="back-text">Back</span>
-    </button>
-
-    <div class="detail-scroll-content">
-        <section class="detail-hero">
-            <div class="detail-hero-frame">
-                <div class="detail-hero-logo-placeholder spot-detail-ph">
-                    <img src="images/whitemap.png" alt="NFUSpot" class="icon-img-green" width="56" height="56">
-                </div>
-                <div class="detail-hero-text">
-                    <h1 class="detail-title">NFUSpot</h1>
-                    <span class="detail-badge detail-badge-blue">南苑地图</span>
-                </div>
-            </div>
-        </section>
-
-        <section class="detail-body">
-            <div class="detail-description">
-                <p>一键探索校园每个角落，再也不会迷路</p>
-                <p>教学楼、食堂、图书馆、宿舍楼，想去哪里都能找到</p>
-                <p>校园导航，从这里开始！</p>
-            </div>
-
-            <div class="detail-qrcode-block detail-qrcode-coming">
-                <p class="qrcode-label qrcode-label-coming">Coming Soon</p>
-                <div class="qrcode-box qrcode-placeholder-box">
-                    <div class="placeholder-content">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-                            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="3" height="3"/><rect x="18" y="14" width="3" height="3"/><rect x="14" y="18" width="3" height="3"/><rect x="18" y="18" width="3" height="3"/>
-                        </svg>
-                        <span>即将上线</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="detail-contact">
-                <p class="contact-heading">Contact</p>
-                <div class="contact-grid">
-                    <div class="contact-item">
-                        <span class="contact-key">Wechat</span>
-                        <span class="contact-val">Zero__Night</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-key">Email</span>
-                        <span class="contact-val">candy_night@163.com</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
 </div>
 
 </body>
