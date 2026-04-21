@@ -9,6 +9,20 @@
     transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 
+/**
+ * [MODIFY] 白色图标图片转绿色主题
+ * 使用 CSS filter 将白色图片转换为绿色，契合网站主题
+ */
+.icon-img-green {
+    filter: brightness(0) saturate(100%) invert(67%) sepia(23%) saturate(634%) hue-rotate(68deg) brightness(92%) contrast(91%);
+    transition: filter var(--transition-fast), transform var(--transition-fast);
+}
+
+.icon-img-green:hover {
+    filter: brightness(0) saturate(100%) invert(67%) sepia(23%) saturate(634%) hue-rotate(68deg) brightness(102%) contrast(91%);
+    transform: scale(1.05);
+}
+
 .flower-decoration:hover {
     opacity: 1;
     filter: drop-shadow(0 3px 5px rgba(136, 51, 68, 0.3));

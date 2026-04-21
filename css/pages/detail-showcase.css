@@ -726,156 +726,180 @@
     pointer-events: none;
 }
 
-/* ========== Related Works Section ========== */
+/* ========== Related Works Section — Botanical Specimen Cards ========== */
 .showcase-related {
     position: relative;
     z-index: 10;
     max-width: 1440px;
-    margin: 28px auto 0;
-    padding: 40px 40px 56px;
+    margin: 32px auto 0;
+    padding: 36px 48px 56px 38px;
     border-top: 1px solid var(--color-border);
     background: #F5F0E8;
 }
 
-.related-header {
+.related-heading {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 32px;
+    gap: 10px;
+    margin-bottom: 24px;
+    padding-left: 2px;
 }
 
-.related-title {
+.related-heading-icon {
+    font-size: 14px;
+    color: var(--color-text-faint);
+    opacity: 0.5;
+}
+
+.related-heading-text {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 3px;
+    text-transform: uppercase;
     color: var(--color-text-muted);
-    margin: 0;
-}
-
-.related-nav {
-    display: flex;
-    gap: 8px;
-}
-
-.related-arrow {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-full);
-    background: var(--color-surface);
-    color: var(--color-text-muted);
-    cursor: pointer;
-    transition: all var(--transition-fast);
-}
-
-.related-arrow:hover {
-    border-color: var(--color-border-strong);
-    color: var(--color-text);
-    background: #fff;
 }
 
 .related-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
 .related-card {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    padding: 28px 24px;
-    background: var(--color-surface-card);
-    border: 1.5px solid var(--color-border);
-    border-radius: var(--radius-xl);
+    min-height: 160px;
+    background: linear-gradient(145deg, #FAF7EF 0%, #F5F0E4 100%);
+    border: 1.5px solid #A69076;
+    border-radius: 4px;
+    box-shadow:
+        0 2px 8px rgba(80, 60, 35, 0.08),
+        0 0 0 1px rgba(166, 144, 118, 0.15) inset;
     text-decoration: none;
     transition: all var(--transition-medium);
-    position: relative;
-    overflow: hidden;
-    opacity: 1;
 }
 
-.related-card::before {
+.related-card-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 18px 24px;
+    flex: 1;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.related-card-inner::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(to right, var(--color-border), transparent);
-    opacity: 0;
-    transition: opacity var(--transition-fast);
+    inset: 6px;
+    border: 1px dashed rgba(140, 120, 90, 0.22);
+    border-radius: 2px;
+    pointer-events: none;
 }
 
 .related-card:hover {
     transform: translateY(-4px);
-    border-color: var(--color-border-strong);
-    box-shadow: var(--shadow-lg);
+    box-shadow:
+        0 8px 24px rgba(80, 60, 35, 0.12),
+        0 0 0 1px rgba(166, 144, 118, 0.3) inset;
+    border-color: #8B7355;
 }
 
-.related-card:hover::before {
-    opacity: 1;
+.specimen-icon-bg {
+    position: absolute;
+    top: 85px;
+    left: -10px;
+    width: 90px;
+    height: 90px;
+    opacity: 0.25;
+    pointer-events: none;
+    transition: all var(--transition-medium);
+    z-index: 1; /* 换为10就可以超出卡片限制 */
+    filter: brightness(0) saturate(100%) invert(67%) sepia(23%) saturate(634%) hue-rotate(68deg) brightness(92%) contrast(91%);
 }
 
-.related-card-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: var(--radius-lg);
+.specimen-icon-bg img,
+.specimen-icon-bg svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.related-card:hover .specimen-icon-bg {
+    opacity: 0.5;  
+    transform: scale(1.1);
+}
+
+.specimen-tag {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 2px 8px;
+    margin-bottom: 12px;
+    background: rgba(200, 185, 160, 0.2);
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #A08060;
+}
+
+.specimen-body {
+    position: relative;
+    z-index: 2;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
 }
 
-.related-icon-green {
-    background: linear-gradient(145deg, #EDF5ED, #DCECD8);
-    color: var(--color-accent-green);
-}
-
-.related-icon-orange {
-    background: linear-gradient(145deg, #FDF6EE, #F5E6D2);
-    color: var(--color-accent-orange);
-}
-
-.related-icon-blue {
-    background: linear-gradient(145deg, #EDF2F7, #DDE6EF);
-    color: var(--color-accent-blue);
-}
-
-.related-card-title {
+.specimen-title {
     font-family: var(--font-display);
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 600;
     color: var(--color-text);
+    line-height: 1.4;
     margin: 0;
-    letter-spacing: 0.5px;
 }
 
-.related-card-desc {
-    font-size: 13px;
-    color: var(--color-text-muted);
+.specimen-desc {
+    font-family: var(--font-body);
+    font-size: 11px;
+    color: #9E8E7E;
+    line-height: 1.5;
     margin: 0;
-    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
-.related-card-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    color: var(--color-primary);
-    margin-top: auto;
-    padding-top: 12px;
-    border-top: 1px solid var(--color-border);
-    transition: gap var(--transition-fast);
+.specimen-leaf {
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    width: 70px;
+    height: auto;
+    opacity: 0.17;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    transition: all var(--transition-medium);
 }
 
-.related-card:hover .related-card-link {
-    gap: 10px;
+.related-card:hover .specimen-leaf {
+    opacity: 0.28;
+    transform: scale(1.05) translateY(-2px);
+}
+
+.related-contact {
+    margin-left: auto;
+    font-family: var(--font-body);
+    font-size: 11px;
+    color: var(--color-text-faint);
+    letter-spacing: 0.3px;
+    font-style: italic;
+    white-space: nowrap;
 }
 
 /* ========== Footer ========== */
@@ -980,14 +1004,25 @@
         display: none;
     }
 
-    .related-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .showcase-related {
+        padding: 32px 28px 48px 24px;
     }
 
-    .related-card:last-child {
-        grid-column: span 2;
-        max-width: 50%;
-        margin: 0 auto;
+    .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .related-card {
+        min-height: 140px;
+    }
+
+    .related-card-inner {
+        padding: 16px 14px 20px;
+    }
+
+    .specimen-leaf {
+        width: 56px;
     }
 }
 
@@ -1039,16 +1074,24 @@
     }
 
     .related-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
 
-    .related-card:last-child {
-        grid-column: span 1;
-        max-width: unset;
+    .related-card {
+        min-height: 130px;
+    }
+
+    .related-card-inner {
+        padding: 14px 12px 18px;
+    }
+
+    .specimen-leaf {
+        width: 50px;
     }
 
     .showcase-related {
-        padding: 32px 16px 48px;
+        padding: 28px 16px 44px 16px;
         margin-top: 20px;
     }
 }
@@ -1103,7 +1146,7 @@
     }
 
     .showcase-related {
-        padding: 24px 12px 36px;
+        padding: 24px 12px 36px 12px;
         margin-top: 16px;
     }
 }

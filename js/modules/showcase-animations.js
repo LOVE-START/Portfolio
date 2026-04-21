@@ -78,11 +78,11 @@ const ShowcaseAnimations = (function() {
         }
 
         gsap.from('.related-card', {
-            y: 30,
-            opacity: 0,
-            duration: 0.7,
-            stagger: 0.12,
-            delay: 1.3,
+            y: 16,
+            autoAlpha: 0,
+            duration: 0.55,
+            stagger: 0.1,
+            delay: 1.0,
             ease: 'power2.out',
             immediateRender: false,
             onComplete: function() {

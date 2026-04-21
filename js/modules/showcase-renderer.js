@@ -217,52 +217,35 @@ const ShowcaseRenderer = (function() {
 
     function renderRelatedSection(currentPage) {
         const relatedItems = NAV_ITEMS.filter(item => item.id !== currentPage);
-        
-        const cardsHtml = relatedItems.map(item => {
+
+        const cardsHtml = relatedItems.map((item, index) => {
             const cardConfig = RELATED_CARDS_CONFIG[item.id];
             const icon = SVG_ICONS[cardConfig.icon];
-            
-            let iconHtml;
-            if (cardConfig.iconClass) {
-                iconHtml = `<div class="related-card-icon ${cardConfig.iconClass}">${icon}</div>`;
-            } else {
-                iconHtml = `<div class="related-card-icon" style="background: ${cardConfig.iconBg}; color: ${cardConfig.color};">${icon}</div>`;
-            }
+            const leafImage = cardConfig.leafImage || '';
+            const specimenNo = cardConfig.specimenNo || (index + 1).toString();
 
             return `
             <a href="${item.href}" class="related-card">
-                ${iconHtml}
-                <h4 class="related-card-title">${item.name}</h4>
-                <p class="related-card-desc">${cardConfig.desc}</p>
-                <span class="related-card-link">
-                    View
-                    ${SVG_ICONS.arrowRight}
-                </span>
+                <div class="related-card-inner">
+                    <span class="specimen-icon-bg">${icon}</span>
+                    <span class="specimen-tag">No. ${specimenNo}</span>
+                    <div class="specimen-body">
+                        <h4 class="specimen-title">${item.label}</h4>
+                        <p class="specimen-desc">${cardConfig.desc}</p>
+                    </div>
+                    ${leafImage ? `<img src="${leafImage}" alt="" class="specimen-leaf" />` : ''}
+                </div>
             </a>`;
         }).join('');
 
         return `
     <section class="showcase-related">
-        <div class="related-header">
-            <h3 class="related-title">MORE WORKS</h3>
-            <p class="contact-signature">
-                <span>Wechat: Zero__Night</span>
-                <span class="contact-divider">·</span>
-                <span>Email: candy_night@163.com</span>
-            </p>
-            <div class="related-nav">
-                <button class="related-arrow" aria-label="Previous">
-                    ${SVG_ICONS.arrowLeft}
-                </button>
-                <button class="related-arrow" aria-label="Next">
-                    ${SVG_ICONS.arrowRightNav}
-                </button>
-            </div>
-        </div>
-
-        <div class="related-grid">
-            ${cardsHtml}
-        </div>
+        <h3 class="related-heading">
+            <span class="related-heading-icon">❧</span>
+            <span class="related-heading-text">RELATED SPECIMENS</span>
+            <span class="related-contact">Wechat: Zero__Night · Email: candy_night@163.com</span>
+        </h3>
+        <div class="related-grid">${cardsHtml}</div>
     </section>`;
     }
 

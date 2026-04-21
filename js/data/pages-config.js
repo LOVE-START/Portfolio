@@ -125,10 +125,10 @@ const NAV_ITEMS = [
 ];
 
 const RELATED_CARDS_CONFIG = {
-    course: { icon: 'calendar', iconBg: 'linear-gradient(145deg, #FDF2F2, #F5E0E0)', color: 'var(--color-primary)', desc: '课表管理' },
-    nest: { icon: 'home', iconClass: 'related-icon-green', desc: '社团探索' },
-    yummy: { icon: 'coffee', iconClass: 'related-icon-orange', desc: '美食图鉴' },
-    spot: { icon: 'mapPin', iconClass: 'related-icon-blue', desc: '校园地图' }
+    course: { icon: 'course', desc: '课表管理', leafImage: 'images/leaf1.png', specimenNo: 'I' },
+    nest: { icon: 'nest', desc: '社团探索', leafImage: 'images/flower2.png', specimenNo: 'II' },
+    yummy: { icon: 'yummy', desc: '美食图鉴', leafImage: 'images/leaf5.png', specimenNo: 'III' },
+    spot: { icon: 'spot', desc: '校园地图', leafImage: 'images/flower3.png', specimenNo: 'IV' }
 };
 
 const ACCENT_COLORS = {
