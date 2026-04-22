@@ -26,10 +26,10 @@ const PAGES_CONFIG = {
             { type: 'image', src: 'images/p2.jpg', alt: 'Course Preview 2', label: '02' },
             { type: 'image', src: 'images/p3.jpeg', alt: 'Course Preview 3', label: '03' }
         ],
-        overview: '在微信搜索小程序「南苑Course」就可以使用啦！这是一个专为南苑学子打造的课表管理工具，帮你轻松掌握每一节课的安排，从清晨到傍晚，记录校园生活的每一个美好瞬间。',
-        highlight: '希望南苑课表能陪伴你走过最美好最温暖的大学时光。如果你有什么好的设计想法或功能建议，超级欢迎与我分享哦！',
-        features: ['实时课表查询与展示', '课程提醒与时间管理', '简洁优雅的用户界面'],
-        footerTags: ['WeChat Mini Program', '2024']
+        overview: '「南苑Course」可以轻松查看每节课程与详情 记录笔记 设置上课提醒 查询成绩考试与学分 同班同学 查找空教室自习 还能生成专属课表卡片当壁纸 用精心的设计温暖你的心 希望在每一次打开的时候 都能让学习这件事变得更顺一点 更可爱一点 也更属于你一点点 ♥',
+        highlight: '是你 让南苑Course的存在变得更加完整与浪漫',
+        features: ['实时课表查询与自习室', '课程提醒与成绩查询', '课堂笔记与同班同学'],
+        footerTags: ['WeChat Mini Program', '2025']
     },
     nest: {
         id: 'nest',
@@ -45,19 +45,19 @@ const PAGES_CONFIG = {
         statusClass: 'meta-value-live',
         showTopBrandBar: true,
         showQRCode: true,
-        qrcodeImage: 'https://nfu2006.asia/miniprogram.jpg',
+        qrcodeImage: 'images/nestqrcode.png',
         qrcodeHint: 'experience it now',
         contactInSidebar: true,
         accentColor: 'green',
         gallery: [
-            { type: 'placeholder-green', icon: 'home', label: 'Home', num: '01' },
-            { type: 'placeholder-green-light', icon: 'galleryUsers', label: 'Community', num: '02' },
-            { type: 'placeholder-warm', icon: 'galleryStar', label: 'Activities', num: '03' }
+            { type: 'image', src: 'images/p10.png', alt: 'Nest Preview 1', label: '01' },
+            { type: 'image', src: 'images/p5.png', alt: 'Nest Preview 2', label: '02' },
+            { type: 'image', src: 'images/p6.png', alt: 'Nest Preview 3', label: '03' }
         ],
-        overview: '南苑社团探索平台，发现校园里每一个有趣的社团活动。在这里找到志同道合的朋友，一起追逐热爱，让大学生活更加精彩纷呈。',
-        highlight: '社团生活是大学最美好的回忆之一。希望通过这个平台，能让更多同学找到属于自己的那个"家"，认识一群志趣相投的伙伴。',
-        features: ['社团信息浏览与搜索', '活动报名与提醒功能', '社团成员互动社区'],
-        footerTags: ['WeChat Mini Program', 'In Development']
+        overview: '「南苑Nest」，发现校园里每一个有趣的社团 在这里找到同频的好友 一起疯 一起追逐热爱 让大学生活更加精彩纷呈闪闪发光',
+        highlight: '这一次 我想和你们一起 完成这个伟大而浪漫的奇迹',
+        features: ['社团信息展示', '活动报名与提醒', '招新系统管理'],
+        footerTags: ['WeChat Mini Program', '2026']
     },
     yummy: {
         id: 'yummy',
@@ -73,16 +73,16 @@ const PAGES_CONFIG = {
         statusClass: 'meta-value-live',
         showTopBrandBar: true,
         showQRCode: true,
-        qrcodeImage: 'https://nfu2006.asia/miniprogram.jpg',
+        qrcodeImage: 'images/yummyqrcode.png',
         qrcodeHint: 'experience it now',
         contactInSidebar: true,
         accentColor: 'orange',
         gallery: [
-            { type: 'placeholder-orange', icon: 'coffee', label: 'Food Map', num: '01' },
-            { type: 'placeholder-orange-light', icon: 'galleryChart', label: 'Ratings', num: '02' },
-            { type: 'placeholder-warm', icon: 'galleryMessage', label: 'Reviews', num: '03' }
+            { type: 'image', src: 'images/p7.png', alt: 'Yummy Preview 1', label: '01' },
+            { type: 'image', src: 'images/p8.png', alt: 'Yummy Preview 2', label: '02' },
+            { type: 'image', src: 'images/p9.png', alt: 'Yummy Preview 3', label: '03' }
         ],
-        overview: '南苑美食图鉴，探索校园里的每一处美味角落。从食堂到周边小吃，用味蕾记录大学生活的点滴幸福，每一份美食都值得被记住。',
+        overview: '「南苑Yummy」期待和你一起，把校园里的每一处烟火气，化作回忆里的最温暖画映。一份图鉴，一段故事，一起走过校园里最美好的日子。',
         highlight: '美食是生活中最治愈的存在。希望这个小程序能帮你发现校园里的隐藏美味，让每一餐都成为期待，而不仅仅是果腹。',
         features: ['校园美食地图与导航', '真实用户评价与评分', '个性化美食推荐'],
         footerTags: ['WeChat Mini Program', 'In Development']
@@ -101,7 +101,7 @@ const PAGES_CONFIG = {
         statusClass: 'meta-value-live',
         showTopBrandBar: true,
         showQRCode: true,
-        qrcodeImage: 'https://nfu2006.asia/miniprogram.jpg',
+        qrcodeImage: 'images/spotqrcode.png',
         qrcodeHint: 'experience it now',
         contactInSidebar: true,
         accentColor: 'blue',

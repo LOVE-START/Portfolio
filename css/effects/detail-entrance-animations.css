@@ -1,0 +1,136 @@
+/**
+ * Detail Page Entrance Animations
+ * 详情页优雅入场动画 - 简洁版
+ */
+
+/* ========== 基础动画变量 ========== */
+:root {
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========== 页面加载动画 ========== */
+.detail-page {
+    animation: pageLoad 0.6s var(--ease-smooth);
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ========== 主要区域入场 ========== */
+.detail-top-bar {
+    animation: slideDown 0.5s var(--ease-smooth);
+}
+
+.detail-header {
+    animation: fadeIn 0.6s var(--ease-smooth) 0.1s both;
+}
+
+.detail-main {
+    animation: fadeInUp 0.7s var(--ease-smooth) 0.2s both;
+}
+
+.bottom-magazine-section {
+    animation: fadeInUp 0.6s var(--ease-smooth) 0.4s both;
+}
+
+.detail-footer {
+    animation: fadeIn 0.5s var(--ease-smooth) 0.5s both;
+}
+
+/* ========== 关键帧动画 ========== */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== 内容区域子元素 ========== */
+.detail-sidebar > *,
+.detail-center > *,
+.detail-right-sidebar > * {
+    animation: fadeInUp 0.5s var(--ease-smooth) both;
+}
+
+.detail-sidebar > *:nth-child(1) { animation-delay: 0.3s; }
+.detail-sidebar > *:nth-child(2) { animation-delay: 0.35s; }
+.detail-sidebar > *:nth-child(3) { animation-delay: 0.4s; }
+.detail-sidebar > *:nth-child(4) { animation-delay: 0.45s; }
+.detail-sidebar > *:nth-child(5) { animation-delay: 0.5s; }
+
+.detail-center > *:nth-child(1) { animation-delay: 0.35s; }
+.detail-center > *:nth-child(2) { animation-delay: 0.45s; }
+.detail-center > *:nth-child(3) { animation-delay: 0.55s; }
+
+.detail-right-sidebar > *:nth-child(1) { animation-delay: 0.35s; }
+.detail-right-sidebar > *:nth-child(2) { animation-delay: 0.4s; }
+.detail-right-sidebar > *:nth-child(3) { animation-delay: 0.45s; }
+
+/* ========== 微交互 ========== */
+.action-pill,
+.back-btn,
+.header-action-btn,
+.rig-item,
+.left-text-block,
+.left-split-card,
+.brc-card {
+    transition: transform 0.25s var(--ease-smooth), 
+                box-shadow 0.25s ease;
+}
+
+.action-pill:hover,
+.back-btn:hover,
+.header-action-btn:hover {
+    transform: translateY(-2px);
+}
+
+.rig-item:hover,
+.left-text-block:hover,
+.left-split-card:hover,
+.brc-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(92, 75, 68, 0.12);
+}
+
+
+
+/* ========== 无障碍支持 ========== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

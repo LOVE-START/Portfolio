@@ -12,6 +12,17 @@
     overflow-x: hidden;
 }
 
+/* 页面全局字体加粗（除 h2.content-title 外） */
+.showcase-page,
+.showcase-page * {
+    font-weight: bold;
+}
+
+.showcase-page h2.content-title,
+.showcase-page h2.content-title * {
+    font-weight: 700;
+}
+
 /* ========== Top Brand Bar ========== */
 .top-brand-bar {
     background: #1a1814;
@@ -435,12 +446,13 @@
 }
 
 .section-text {
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
     font-size: 15px;
     line-height: 2.0;
     color: #a89b8c;
     margin: 0;
     letter-spacing: 0.5px;
-    font-weight: 300;
+    font-weight: 600;
 }
 
 .body-section-highlight {
@@ -503,6 +515,7 @@
     font-size: 15px;
     position: relative;
     z-index: 1;
+    font-weight: 400;
 }
 
 .contact-signature {

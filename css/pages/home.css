@@ -69,7 +69,7 @@
     font-family: var(--font-mono);
     font-size: 10px;
     letter-spacing: 3px;
-    color: var(--color-text-muted);
+    color: #6B5B4F;
     text-transform: uppercase;
     margin: 0;
 }

@@ -1,0 +1,666 @@
+/* ===================================
+   About Course Page - Main Stylesheet
+   Color Theme: Warm Beige/Brown Palette
+   Font: Cormorant Garamond + Nunito Sans
+   =================================== */
+
+/* CSS Variables - Design Tokens */
+:root {
+    --bg-cream: #F5F0EB;
+    --bg-warm: #EDE6DD;
+    --brown-dark: #8B7355;
+    --brown-medium: #A68B6A;
+    --brown-light: #C4A882;
+    --brown-pale: #D4C4AD;
+    --text-primary: #4A3F35;
+    --text-secondary: #7D6E5D;
+    --text-light: #9B8B7A;
+    --border-color: #DDD5CA;
+    --accent-brown: #B8956E;
+    --card-bg: #FAF8F5;
+    --green-muted: #9BA888;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: var(--bg-cream);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ===================================
+   Top Brand Bar (Black Minimal Style)
+   Reference: nestdetail.html detail-top-bar
+   =================================== */
+
+.top-nav {
+    background: #1a1a1a;
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 200;
+}
+
+.brand-text {
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: rgba(255, 250, 245, 0.92);
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Legacy nav classes - kept for potential reuse */
+.nav-left,
+.nav-right {
+    display: none;
+}
+
+.nav-menu {
+    display: none;
+}
+
+/* ===================================
+   Header Navigation (Minimal Design)
+   Brand: Course Heart
+   =================================== */
+
+.filter-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 48px;
+    background: linear-gradient(180deg, #FAF8F5 0%, #F5F0EB 100%);
+    border-bottom: 1px solid rgba(139, 115, 85, 0.08);
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.back-btn {
+    position: absolute;
+    left: 48px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 13px;
+    color: #E6A87B;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: all 0.25s ease;
+    background: transparent;
+    border: 1px solid rgba(230, 168, 123, 0.3);
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    background: rgba(230, 168, 123, 0.1);
+    border-color: rgba(230, 168, 123, 0.5);
+}
+
+.back-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+}
+
+.brand-heart {
+    font-size: 20px;
+    color: #C4A882;
+    animation: heartbeat 2s ease-in-out infinite;
+    display: inline-block;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.brand-text-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: #4A3F35;
+    position: relative;
+}
+
+.brand-text-main::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #C4A882, transparent);
+    opacity: 0.5;
+}
+
+/* ===================================
+   Main Content Layout
+   =================================== */
+
+.main-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 3rem 4rem;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr 480px;
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+/* Left Column - Illustration Cards */
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.illustration-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #E8D5C4 0%, #C4A882 40%, #8B7355 100%);
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.4),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    pointer-events: none;
+}
+
+.close-btn::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 100%);
+    border-radius: 50%;
+}
+
+.close-btn.pin-left {
+    top: 0.6rem;
+    right: auto;
+    left: 0.6rem;
+}
+
+.card-image-placeholder {
+    flex: 1;
+    background: linear-gradient(135deg, #E8DFD4 0%, #DDD3C6 100%);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    min-height: 140px;
+}
+
+.card-image-wrapper {
+    flex: 1;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-labels {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.label-tags {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.email-icon {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.email-icon:hover {
+    border-color: var(--brown-medium);
+}
+
+/* Center Column - Text Content */
+.center-column {
+    padding-top: 1rem;
+}
+
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-light);
+}
+
+.divider-line {
+    width: 40px;
+    height: 2px;
+    background-color: var(--brown-pale);
+    margin: 1.5rem 0;
+}
+
+.content-text {
+    font-size: 0.92rem;
+    line-height: 1.9;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.info-section {
+    margin-top: 2.5rem;
+}
+
+.info-item {
+    margin-bottom: 1.8rem;
+}
+
+.info-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.info-value {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.link-text {
+    color: var(--brown-medium);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.link-text:hover {
+    color: var(--brown-dark);
+}
+
+/* Right Column - Main Illustration */
+.right-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-illustration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.illustration-image {
+    max-width: 100%;
+    height: auto;
+    transform: scale(1.2);
+}
+
+/* ===================================
+   Bottom Feature Cards Section
+   Reference: Image-based elegant card design
+   =================================== */
+
+.bottom-section {
+    margin-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+.bottom-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.bottom-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--text-light);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+}
+
+.feature-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(139, 115, 85, 0.12);
+}
+
+.feature-card:not(.card-text-only) {
+    display: block;
+    position: relative;
+    overflow: visible;
+}
+
+.feature-image-wrapper {
+    width: 140px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0.8rem;
+    position: absolute;
+
+    /* ========== 图片位置调整说明 ==========
+     * 使用 top/left 来定位图片位置
+     *
+     * 【左右移动】修改 left:
+     *   - 向左移动: left: -20px;   ← 负数向左
+     *   - 向右移动: left: 20px;    ← 正数向右
+     *   - 靠左边缘: left: 0;       ← 当前状态
+     *
+     * 【上下移动】修改 top:
+     *   - 向上移动: top: -30px;    ← 负数向上
+     *   - 向下移动: top: 30px;     ← 正数向下
+     *   - 靠上边缘: top: 0;        ← 当前状态
+     *
+     * 【组合示例】:
+     *   左上角外侧: left: -10px; top: -20px;
+     *   右下角内侧: left: auto; right: 10px; bottom: 0;
+     */
+    top: 0;
+    left: 0;
+
+    /* 允许图片超出卡片边界 */
+    z-index: 10;
+}
+
+.feature-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: sepia(20%) saturate(80%);
+
+    /* ========== 图片位置微调 ==========
+     * margin-top: 负值 = 向上移动
+     * margin-left: 负值 = 向左移动
+     * 可根据需要调整数值
+     */
+    margin-top: -100px;
+    margin-left: -60px;
+}
+
+.feature-content,
+.feature-content-full {
+    padding: 2rem 1.8rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 带图片的卡片 - 文字内容区 */
+.feature-content {
+    padding-left: 1.8rem;  /* 左侧正常间距，文字向左靠 */
+}
+
+.feature-sections {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+    /* ========== 单独控制每个文字块的位置 ==========
+     * 已重构：使用独立类名控制
+     * .item-about    - "关于课程"
+     * .item-audience - "适合人群"
+     */
+
+
+.item-about {
+     margin-left: 55px;  
+}
+
+/* ========== 第二段："适合人群" - 独立控制 ========== */
+.item-audience {
+    margin-left: -15px;  /* 向左移动 15px，可调整 */
+}
+
+.item-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+}
+
+.item-text {
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+}
+
+.feature-footer {
+    margin-top: 1.8rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* 确保 footer 占满卡片全宽 */
+    width: calc(100% + 3.6rem);  /* 补偿左右 padding (1.8rem * 2) */
+    margin-left: -1.8rem;         /* 向左扩展到卡片边缘 */
+    padding-left: 1.8rem;         /* 恢复左侧内边距 */
+    padding-right: 1.8rem;        /* 恢复右侧内边距 */
+}
+
+.footer-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+.footer-action {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+.footer-action:hover {
+    color: var(--brown-medium);
+}
+
+.action-badge {
+    padding: 0.45rem 1.2rem;
+    background-color: var(--accent-brown);
+    color: white;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.action-badge:hover {
+    background-color: var(--brown-dark);
+}
+
+/* ===================================
+   Responsive Design - Media Queries
+   =================================== */
+
+@media (max-width: 1200px) {
+    .content-grid {
+        grid-template-columns: 250px 1fr 380px;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .right-column {
+        order: -1;
+    }
+
+    .main-illustration {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-nav {
+        padding: 0.8rem 1.5rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .filter-bar {
+        padding: 16px 20px;
+    }
+
+    .back-btn {
+        left: 20px;
+        padding: 5px 12px;
+        font-size: 12px;
+    }
+
+    .back-btn svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .brand-text-main {
+        font-size: 20px;
+    }
+
+    .brand-heart {
+        font-size: 18px;
+    }
+
+    .main-container {
+        padding: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+}

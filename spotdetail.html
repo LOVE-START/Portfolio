@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFUSpot - 南苑地图 | M-KOCO</title>
+    <link rel="icon" href="https://nfu2006.asia/logo.png" type="image/png">
+
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/base/typography.css">
+    <link rel="stylesheet" href="css/layout/container.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/effects/background.css">
+    <link rel="stylesheet" href="css/effects/animations.css">
+    <link rel="stylesheet" href="css/effects/detail-entrance-animations.css">
+    <link rel="stylesheet" href="css/pages/detail-content.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+</head>
+<body class="detail-page">
+
+<div class="background"></div>
+<div class="dynamic-glow"></div>
+
+<!-- Top Brand Bar -->
+<div class="detail-top-bar">
+    <p class="brand-text">M-KOCO Collection</p>
+</div>
+
+<!-- Header Navigation -->
+<header class="detail-header">
+    <div class="detail-header-left">
+        <a href="index.html" class="back-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back
+        </a>
+        <div class="header-brand-info">
+            <h1 class="brand-main-name">NFUSpot</h1>
+            <p class="brand-sub-name">Mini Program</p>
+        </div>
+    </div>
+
+    <nav class="detail-header-right">
+        <a href="coursedetail.html" class="header-nav-link">Course</a>
+        <span style="color: var(--color-text-faint); font-size: 10px;">·</span>
+        <a href="nestdetail.html" class="header-nav-link">Nest</a>
+        <span style="color: var(--color-text-faint); font-size: 10px;">·</span>
+        <a href="yummydetail.html" class="header-nav-link">Yummy</a>
+        <a href="https://20040319.xyz/index/" target="_blank" class="header-action-btn">Visit Homepage</a>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<main class="detail-main">
+    <div class="magazine-grid">
+
+        <!-- ========== LEFT COLUMN: Content Area (图文混排) ========== -->
+        <aside class="detail-sidebar">
+            <!-- 装饰图片 -->
+            <div class="left-image-card">
+                <img src="images/beautiful.png" alt="Map" class="lic-img">
+            </div>
+
+            <!-- 植物装饰卡片 -->
+            <div class="left-plant-card">
+                <img src="images/flower3.png" alt="" class="lpc-img">
+                <span class="lpc-label">Navigation</span>
+            </div>
+
+            <!-- 文字内容块 -->
+            <div class="left-text-block">
+                <h4 class="ltb-heading">About This Project</h4>
+                <p class="ltb-text">
+                    南苑地图小程序，一键探索校园每个角落，再也不会迷路。
+                    教学楼、食堂、图书馆、宿舍楼，想去哪里都能找到，让校园生活更加便捷。
+                    迷路是新生最常遇到的困扰，希望这个小程序能成为你在校园里的贴心向导。
+                </p>
+                <span class="ltb-more">more →</span>
+            </div>
+
+            <!-- 左色块+右插图 组合卡片 -->
+            <div class="left-split-card">
+                <div class="lsc-color-panel">
+                    <h5 class="lsc-title">Key Features</h5>
+                    <ul class="lsc-list">
+                        <li>交互式校园地图浏览</li>
+                        <li>智能路径规划与导航</li>
+                        <li>建筑详情与设施查询</li>
+                    </ul>
+                    <span class="lsc-tag">v1.0</span>
+                </div>
+                <div class="lsc-image-panel">
+                    <img src="images/d10.png" alt="" class="lsc-img">
+                </div>
+            </div>
+
+            <!-- 信件风格文字块 -->
+            <div class="left-quote-block">
+                <span class="lqb-by">By</span>
+                <p class="lqb-text">
+                    让你轻松找到每一个目的地，不再为找路而烦恼
+                </p>
+                <span class="lqb-signature">✦ Zero__Night</span>
+            </div>
+        </aside>
+
+        <!-- ========== CENTER COLUMN: Hero + Title ========== -->
+        <section class="detail-center">
+
+            <!-- Hero Illustration Frame -->
+            <div class="hero-illustration-frame">
+                <img src="images/autumn3.png" alt="NFUSpot Hero" id="heroImage">
+                <div class="frame-corner-decor frame-corner-tl"></div>
+                <div class="frame-corner-decor frame-corner-tr"></div>
+                <div class="frame-corner-decor frame-corner-bl"></div>
+                <div class="frame-corner-decor frame-corner-br"></div>
+            </div>
+
+            <!-- Project Title -->
+            <div class="project-title-section">
+                <div class="title-decor-line"></div>
+                <h2 class="project-title">NFUSPOT</h2>
+                <p class="project-subtitle">南苑地图 · 一键探索校园每个角落</p>
+            </div>
+
+            <!-- Action Pills -->
+            <div class="action-pills-row">
+                <button class="action-pill active">Overview</button>
+                <button class="action-pill">Features</button>
+                <button class="action-pill">Map</button>
+                <button class="action-pill">Navigate</button>
+            </div>
+        </section>
+
+        <!-- ========== RIGHT COLUMN: Decorative Grid (装饰小格子) ========== -->
+        <aside class="detail-right-sidebar">
+
+            <!-- 顶部大图标卡 (暖色背景) -->
+            <div class="right-hero-card">
+                <div class="rhc-icon-box">
+                    <img src="images/whitemap.png" alt="Icon" class="rhc-icon">
+                </div>
+                <div class="rhc-header">
+                    <span class="rhc-title">NFUSpot</span>
+                    <span class="rhc-sub">Mini Program</span>
+                </div>
+            </div>
+
+            <!-- 双列信息标签 -->
+            <div class="right-info-grid">
+                <div class="rig-item">
+                    <span class="rig-label">Category</span>
+                    <span class="rig-value">Map & Navigation</span>
+                </div>
+                <div class="rig-item">
+                    <span class="rig-label">Status</span>
+                    <span class="rig-value rig-live">Coming Soon</span>
+                </div>
+                <div class="rig-item">
+                    <span class="rig-label">Platform</span>
+                    <span class="rig-value">WeChat</span>
+                </div>
+            </div>
+
+            <div class="qr-card-container">
+                <img src="images/card1.png" alt="" class="qr-card-bg">
+                <p class="qr-wish-text qr-wish-line1">STAY TUNED</p>
+                <p class="qr-wish-text qr-wish-line2">COMING SOON</p>
+                <img src="images/spotqrcode.png" alt="QR Code" class="qr-code-img">
+            </div>
+
+        </aside>
+
+    </div>
+</main>
+
+<!-- ========== BOTTOM MAGAZINE SECTION (底部横向排版) ========== -->
+<section class="bottom-magazine-section">
+    <div class="bms-inner">
+        <!-- 左侧大插画 -->
+        <div class="bms-left-illustration">
+            <img src="images/story2.png" alt="Scene" class="bli-img">
+            <span class="bli-decor bli-decor-tl">✿</span>
+            <span class="bli-decor bli-decor-br">❀</span>
+        </div>
+
+        <!-- 中间圆形元素 -->
+        <div class="bms-center-circle">
+            <div class="bcc-circle">
+                <img src="images/spotlogo.png" alt="" class="bcc-img">
+            </div>
+            <div class="bcc-scatter">
+                <span class="bcc-dot"></span>
+                <span class="bcc-dot"></span>
+                <span class="bcc-dot"></span>
+                <span class="bcc-sprinkle">✦</span>
+            </div>
+        </div>
+
+        <!-- 右侧多卡片区域 -->
+        <div class="bms-right-cards">
+            <div class="brc-top-row">
+                <span class="brc-pill">Collection</span>
+                <div class="brc-search-bar">
+                    <span class="brc-search-placeholder">search...</span>
+                </div>
+            </div>
+            <div class="brc-grid">
+                <div class="brc-card brc-card-wide">
+                    <h6 class="brc-card-title">NFUCourse</h6>
+                    <p class="brc-card-desc">南苑课表管理平台</p>
+                </div>
+                <div class="brc-card brc-card-product">
+                    <img src="images/whitemap.png" alt="" class="brc-prod-img">
+                    <span class="brc-prod-label">Preview</span>
+                </div>
+                <div class="brc-card brc-card-highlight">
+                    <span class="brc-hl-text">NFUNest<br>社团小程序</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="detail-footer">
+    <p>&copy; <span id="currentYear"></span> NFU Mini Programs · Built with ♥ by Zero__Night</p>
+</footer>
+
+<script src="js/detail-page.js"></script>
+<script>
+window.detailPageConfig = {
+    gallery: [
+        { src: 'images/d1.png', label: '01' },
+        { src: 'images/d2.png', label: '02' },
+        { src: 'images/d3.png', label: '03' }
+    ]
+};
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

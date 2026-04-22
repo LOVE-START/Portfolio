@@ -1,6 +1,6 @@
 /**
  * Detail Page Interactive Script
- * 独立的详情页交互脚本
+ * 详情页交互脚本
  */
 
 class DetailPage {
@@ -12,7 +12,6 @@ class DetailPage {
 
     init() {
         this.setupGalleryInteraction();
-        this.setupScrollAnimations();
         this.setupHoverEffects();
     }
 
@@ -22,10 +21,6 @@ class DetailPage {
         thumbs.forEach((thumb, index) => {
             thumb.addEventListener('click', () => {
                 this.setActiveImage(index);
-            });
-
-            thumb.addEventListener('mouseenter', () => {
-                this.previewImage(index);
             });
         });
 
@@ -42,57 +37,6 @@ class DetailPage {
         });
 
         this.currentImageIndex = index;
-    }
-
-    previewImage(index) {
-        // [MODIFY] 已禁用预览功能，heroImage 不再跟随相册变化
-    }
-
-    setupScrollAnimations() {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                    
-                    if (entry.target.classList.contains('content-detail-card')) {
-                        this.animateCardContent(entry.target);
-                    }
-                }
-            });
-        }, observerOptions);
-
-        const animatedElements = document.querySelectorAll(
-            '.detail-sidebar, .detail-center, .detail-right-sidebar, ' +
-            '.content-detail-card, .info-card, .related-item'
-        );
-
-        animatedElements.forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    }
-
-    animateCardContent(card) {
-        const blocks = card.querySelectorAll('.body-block, .highlight-block, .feature-list, .qr-code-section, .contact-section');
-        
-        blocks.forEach((block, index) => {
-            block.style.opacity = '0';
-            block.style.transform = 'translateY(15px)';
-            block.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            
-            setTimeout(() => {
-                block.style.opacity = '1';
-                block.style.transform = 'translateY(0)';
-            }, 150 + (index * 100));
-        });
     }
 
     setupHoverEffects() {
