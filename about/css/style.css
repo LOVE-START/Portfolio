@@ -60,15 +60,7 @@ body {
     font-weight: 500;
 }
 
-/* Legacy nav classes - kept for potential reuse */
-.nav-left,
-.nav-right {
-    display: none;
-}
 
-.nav-menu {
-    display: none;
-}
 
 /* ===================================
    Header Navigation (Minimal Design)
@@ -86,7 +78,6 @@ body {
     background: linear-gradient(180deg, #FAF8F5 0%, #F5F0EB 100%);
     border-bottom: 1px solid rgba(139, 115, 85, 0.08);
     backdrop-filter: blur(10px);
-    position: relative;
 }
 
 .back-btn {
@@ -189,6 +180,7 @@ body {
     min-height: 200px;
     display: flex;
     flex-direction: column;
+    overflow: visible;
 }
 
 .close-btn {
@@ -222,19 +214,6 @@ body {
     top: 0.6rem;
     right: auto;
     left: 0.6rem;
-}
-
-.card-image-placeholder {
-    flex: 1;
-    background: linear-gradient(135deg, #E8DFD4 0%, #DDD3C6 100%);
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-light);
-    font-size: 0.85rem;
-    min-height: 140px;
 }
 
 .card-image-wrapper {
@@ -350,17 +329,6 @@ body {
     color: var(--text-secondary);
 }
 
-.link-text {
-    color: var(--brown-medium);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.link-text:hover {
-    color: var(--brown-dark);
-}
-
 /* Right Column - Main Illustration */
 .right-column {
     display: flex;
@@ -389,6 +357,8 @@ body {
 .bottom-section {
     margin-top: 4rem;
     padding-bottom: 2rem;
+    transform: scale(0.9);
+    transform-origin: top center;
 }
 
 .bottom-header {
@@ -415,19 +385,13 @@ body {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    overflow: hidden;
+    overflow: visible;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feature-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 32px rgba(139, 115, 85, 0.12);
-}
-
-.feature-card:not(.card-text-only) {
-    display: block;
-    position: relative;
-    overflow: visible;
 }
 
 .feature-image-wrapper {
@@ -478,16 +442,10 @@ body {
     margin-left: -60px;
 }
 
-.feature-content,
 .feature-content-full {
     padding: 2rem 1.8rem 1.5rem;
     display: flex;
     flex-direction: column;
-}
-
-/* 带图片的卡片 - 文字内容区 */
-.feature-content {
-    padding-left: 1.8rem;  /* 左侧正常间距，文字向左靠 */
 }
 
 .feature-sections {
@@ -503,28 +461,12 @@ body {
     gap: 0.4rem;
 }
 
-    /* ========== 单独控制每个文字块的位置 ==========
-     * 已重构：使用独立类名控制
-     * .item-about    - "关于课程"
-     * .item-audience - "适合人群"
-     */
-
-
 .item-about {
      margin-left: 55px;  
 }
 
-/* ========== 第二段："适合人群" - 独立控制 ========== */
 .item-audience {
-    margin-left: -15px;  /* 向左移动 15px，可调整 */
-}
-
-.item-label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--text-primary);
+    margin-left: -15px;
 }
 
 .item-text {
@@ -556,39 +498,547 @@ body {
     color: var(--text-secondary);
 }
 
-.footer-action {
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-light);
-    cursor: pointer;
-    transition: color 0.3s ease;
+/* ===================================
+   Letter-Style Cards Design
+   Three Unique Card Styles
+   =================================== */
+
+/* 明信片风格 - Card 1 */
+.card-postcard {
+    position: relative;
+    background: transparent;
     border: none;
-    background: none;
-    padding: 0;
+    box-shadow: none;
+    perspective: 1200px;
+    align-self: start;
 }
 
-.footer-action:hover {
-    color: var(--brown-medium);
+.card-postcard:hover {
+    transform: none;
 }
 
-.action-badge {
-    padding: 0.45rem 1.2rem;
-    background-color: var(--accent-brown);
-    color: white;
+.card-postcard:hover .postcard-front {
+    transform: translateY(-4px) rotateY(-3deg);
+    box-shadow: 
+        0 8px 24px rgba(139, 115, 85, 0.15),
+        0 4px 8px rgba(139, 115, 85, 0.1);
+}
+
+.card-postcard:hover .postcard-back {
+    transform: translateY(-4px) rotateY(2deg);
+    box-shadow: 
+        0 8px 24px rgba(139, 115, 85, 0.15),
+        0 4px 8px rgba(139, 115, 85, 0.1);
+}
+
+.postcard-front {
+    position: relative;
+    background:
+        linear-gradient(135deg, #FFFEF9 0%, #FFF9F0 100%);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow:
+        0 4px 12px rgba(139, 115, 85, 0.1),
+        0 2px 4px rgba(139, 115, 85, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(212, 196, 173, 0.4);
+    margin-bottom: 1rem;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    overflow: visible;
+}
+
+.postcard-front::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 24px,
+            rgba(196, 168, 130, 0.04) 24px,
+            rgba(196, 168, 130, 0.04) 25px
+        );
+    pointer-events: none;
+}
+
+.postcard-stamp {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 56px;
+    height: 68px;
+    background: 
+        radial-gradient(ellipse at 30% 30%, rgba(255, 250, 245, 0.8) 0%, transparent 60%),
+        linear-gradient(135deg, var(--bg-warm) 0%, var(--brown-pale) 100%);
+    border: 2px dashed var(--brown-medium);
     border-radius: 4px;
-    font-size: 0.72rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(10deg);
+    box-shadow: 
+        2px 2px 6px rgba(139, 115, 85, 0.15),
+        inset 0 1px 2px rgba(255, 255, 255, 0.5);
+    gap: 2px;
+}
+
+.stamp-icon {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    line-height: 1;
+}
+
+.stamp-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.6rem;
     font-weight: 600;
+    color: var(--brown-dark);
+    text-align: center;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+}
+
+.postmark {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    opacity: 0.6;
+    transform: rotate(-3deg);
+}
+
+.postmark-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--brown-medium);
+    border: 1.5px solid var(--brown-pale);
+    border-radius: 2px;
+    padding: 1px 6px;
+    line-height: 1.4;
+    background: rgba(255, 254, 249, 0.6);
+}
+
+.postcard-back {
+    background: linear-gradient(135deg, #FFFEF9 0%, #FFF9F0 100%);
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem 1rem;
+    box-shadow:
+        0 4px 12px rgba(139, 115, 85, 0.1),
+        0 2px 4px rgba(139, 115, 85, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(212, 196, 173, 0.4);
+    position: relative;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    overflow: visible;
+}
+
+.postcard-back::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 27px,
+            rgba(196, 168, 130, 0.08) 27px,
+            rgba(196, 168, 130, 0.08) 28px
+        );
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.postcard-divider {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 5%,
+        rgba(196, 168, 130, 0.2) 20%,
+        rgba(196, 168, 130, 0.2) 80%,
+        transparent 95%
+    );
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.letter-header-mini {
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(196, 168, 130, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.letter-date-mini {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+}
+
+.postcard-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.postcard-list {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin-bottom: 0;
+}
+
+.postcard-poetry {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    text-align: center;
+    font-style: italic;
+    letter-spacing: 0.02em;
+}
+
+.feature-divider {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--brown-pale), transparent);
+    margin: 0.4rem auto;
+    opacity: 0.6;
+}
+
+.item-middle {
+    margin-left: 0;
+    text-align: center;
+}
+
+/* 信纸风格 - Card 2 */
+.card-letter {
+    background: linear-gradient(135deg, #FFFEF9 0%, #FFF9F0 50%, #FFFEF9 100%);
+    border: 1px solid rgba(212, 196, 173, 0.3);
+    box-shadow:
+        0 4px 12px rgba(139, 115, 85, 0.1),
+        0 2px 4px rgba(139, 115, 85, 0.08);
+    position: relative;
+    overflow: visible;
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+}
+
+.card-letter:hover {
+    transform: translateY(-6px);
+    box-shadow: 
+        0 16px 40px rgba(139, 115, 85, 0.12),
+        0 4px 12px rgba(139, 115, 85, 0.08);
+}
+
+.card-letter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 31px,
+            rgba(196, 168, 130, 0.06) 31px,
+            rgba(196, 168, 130, 0.06) 32px
+        );
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.card-letter .feature-content-full {
+    position: relative;
+    z-index: 1;
+}
+
+.wax-seal {
+    position: absolute;
+    top: -18px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    background: radial-gradient(circle at 35% 35%, #D4A574 0%, #B8956E 40%, #9A7B5B 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 3px 8px rgba(139, 115, 85, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.1),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    z-index: 2;
+    transform: rotate(-8deg);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-letter:hover .wax-seal {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.seal-icon {
+    font-size: 1.2rem;
+    color: rgba(255, 250, 245, 0.9);
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.card-letter .letter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(196, 168, 130, 0.2);
+}
+
+.card-letter .letter-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+}
+
+.card-letter .letter-location {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-light);
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border: none;
+    position: relative;
+    padding-left: 12px;
 }
 
-.action-badge:hover {
-    background-color: var(--brown-dark);
+.card-letter .letter-location::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--brown-pale);
+}
+
+.card-letter .letter-greeting {
+    margin-bottom: 1.5rem;
+}
+
+.card-letter .greeting-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    letter-spacing: 0.02em;
+    margin: 0;
+}
+
+.card-letter .item-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    line-height: 2;
+    text-align: justify;
+    letter-spacing: 0.01em;
+}
+
+.card-letter .signature-area {
+    text-align: right;
+    margin-top: 1.5rem;
+}
+
+.card-letter .signature-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--text-primary);
+    letter-spacing: 0.15em;
+    position: relative;
+    display: inline-block;
+}
+
+.card-letter .signature-text::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--brown-pale), transparent);
+}
+
+/* 便签风格 - Card 3 */
+.card-note {
+    background: linear-gradient(135deg, #FFF9F0 0%, #FFFBF5 100%);
+    border: 1px solid rgba(212, 196, 173, 0.4);
+    box-shadow: 
+        0 4px 12px rgba(139, 115, 85, 0.12),
+        0 2px 4px rgba(139, 115, 85, 0.08);
+    position: relative;
+    transform: rotate(-1.5deg);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+    align-self: start;
+}
+
+.card-note:hover {
+    transform: rotate(0deg) translateY(-6px);
+    box-shadow: 
+        0 16px 40px rgba(139, 115, 85, 0.14),
+        0 4px 12px rgba(139, 115, 85, 0.08);
+}
+
+.tape-top {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 28px;
+    background: 
+        linear-gradient(90deg, 
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.3) 20%,
+            rgba(255, 255, 255, 0.1) 40%,
+            rgba(255, 255, 255, 0.2) 60%,
+            rgba(255, 255, 255, 0.1) 100%
+        ),
+        rgba(212, 196, 173, 0.5);
+    border-radius: 3px;
+    box-shadow: 
+        0 1px 3px rgba(139, 115, 85, 0.15),
+        inset 0 1px 1px rgba(255, 255, 255, 0.4);
+    z-index: 3;
+    backdrop-filter: blur(2px);
+}
+
+.tape-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -2px;
+    right: -2px;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 3px,
+            rgba(139, 115, 85, 0.03) 3px,
+            rgba(139, 115, 85, 0.03) 4px
+        );
+    border-radius: 3px;
+}
+
+.note-decoration {
+    position: absolute;
+    top: 27px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.note-pin {
+    font-size: 1.1rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+    display: block;
+    line-height: 1;
+}
+
+.card-note:hover .note-pin {
+    transform: translateY(-2px);
+}
+
+.card-note .feature-content-full {
+    padding: 5.625rem 1.8rem 2.25rem;
+    min-height: auto;
+}
+
+.card-note .note-text {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.8;
+    text-align: center;
+    font-style: italic;
+    color: var(--text-primary);
+    letter-spacing: 0.03em;
+    padding: 0 0.5rem;
+}
+
+.card-note .feature-footer {
+    justify-content: center;
+    border-top: none;
+    margin-top: 1.8rem;
+    padding-top: 0;
+}
+
+.heart-seal {
+    font-size: 1.2rem;
+    color: #C4A882;
+    opacity: 0.8;
+    animation: heartbeat 2s ease-in-out infinite;
+    filter: drop-shadow(0 2px 6px rgba(196, 168, 130, 0.4));
+}
+
+/* ===================================
+   Card Entrance Animations
+   =================================== */
+
+.cards-grid .feature-card:nth-child(1) {
+    animation: cardEnter 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.1s both;
+}
+
+.cards-grid .feature-card:nth-child(2) {
+    animation: cardEnter 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.25s both;
+}
+
+.cards-grid .feature-card:nth-child(3) {
+    animation: cardEnter 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.4s both;
+}
+
+@keyframes cardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ===================================
@@ -627,10 +1077,6 @@ body {
         padding: 0.8rem 1.5rem;
         flex-wrap: wrap;
         gap: 1rem;
-    }
-
-    .nav-menu {
-        display: none;
     }
 
     .filter-bar {

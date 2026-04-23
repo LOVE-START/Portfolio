@@ -871,7 +871,8 @@
     max-width: 60px;
     height: auto;
     object-fit: contain;
-    opacity: 0.4;
+    opacity: 1;
+    filter: sepia(1) hue-rotate(-5deg) saturate(1.5) brightness(0.65) contrast(1.2);
 }
 
 .brc-prod-label {
@@ -953,35 +954,50 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 4px;
+    gap: 2px;
     position: relative;
-    cursor: pointer;
+    cursor: default;
     text-decoration: none;
+    padding: 12px;
 }
 
-.brc-hl-icon {
-    font-size: 14px;
-    color: rgba(92, 75, 68, 0.3);
-    margin-bottom: 2px;
+.brc-hl-label {
+    font-family: 'PingFang SC', -apple-system, 'Microsoft YaHei', sans-serif;
+    font-size: 8px;
+    letter-spacing: 0.5px;
+    color: rgba(92, 75, 68, 0.7);
 }
 
-.brc-hl-arrow {
-    font-size: 12px;
-    color: rgba(92, 75, 68, 0.4);
-    margin-top: 4px;
-    transition: transform 0.25s ease;
+.brc-hl-days {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #5C4B44;
+    line-height: 1;
+    letter-spacing: 0;
 }
 
-.brc-card-highlight:hover .brc-hl-arrow {
-    transform: translateX(3px);
-}
-
-.brc-hl-text {
+.brc-hl-unit {
     font-family: 'PingFang SC', -apple-system, 'Microsoft YaHei', sans-serif;
     font-size: 9px;
-    line-height: 1.6;
-    color: #5C4B44;
     letter-spacing: 0.5px;
+    color: rgba(92, 75, 68, 0.8);
+}
+
+.brc-hl-divider {
+    width: 24px;
+    height: 1px;
+    background: rgba(92, 75, 68, 0.25);
+    margin: 1px 0;
+}
+
+.brc-hl-since {
+    font-family: 'Georgia', serif;
+    font-size: 7px;
+    letter-spacing: 1px;
+    color: rgba(92, 75, 68, 0.5);
+    text-transform: uppercase;
+    font-style: italic;
 }
 
 /* ============================================================

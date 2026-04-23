@@ -4,48 +4,8 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    initFilterButtons();
-    initCloseButtons();
     initScrollAnimations();
 });
-
-/**
- * Initialize filter button click handlers
- * Toggles active state on filter buttons
- */
-function initFilterButtons() {
-    const filterBtns = document.querySelectorAll('.filter-btn');
-
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
-}
-
-/**
- * Initialize close button functionality
- * Removes illustration card when close button is clicked
- */
-function initCloseButtons() {
-    const closeBtns = document.querySelectorAll('.close-btn');
-
-    closeBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const card = this.closest('.illustration-card');
-            if (card) {
-                card.style.opacity = '0';
-                card.style.transform = 'scale(0.95)';
-                card.style.transition = 'all 0.3s ease';
-
-                setTimeout(() => {
-                    card.style.display = 'none';
-                }, 300);
-            }
-        });
-    });
-}
 
 /**
  * Initialize scroll-based animations

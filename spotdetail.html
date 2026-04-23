@@ -205,20 +205,31 @@
             <div class="brc-top-row">
                 <span class="brc-pill">Collection</span>
                 <div class="brc-search-bar">
-                    <span class="brc-search-placeholder">search...</span>
+                    <span class="brc-search-placeholder">◆ Project Completed ◆ May 24, 2026 00:52</span>
                 </div>
             </div>
             <div class="brc-grid">
-                <div class="brc-card brc-card-wide">
-                    <h6 class="brc-card-title">NFUCourse</h6>
-                    <p class="brc-card-desc">南苑课表管理平台</p>
+                <div class="brc-card brc-card-wide brc-card-about">
+                    <div class="brc-about-content">
+                        <div class="brc-about-left">
+                            <h6 class="brc-card-title">NFUSpot · 关于</h6>
+                            <p class="brc-card-desc">了解南苑地图平台的设计理念与故事</p>
+                        </div>
+                        <div class="brc-about-right">
+                            <span class="brc-about-icon">♥</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="brc-card brc-card-product">
-                    <img src="images/whitemap.png" alt="" class="brc-prod-img">
-                    <span class="brc-prod-label">Preview</span>
+                    <img src="images/whitemap.png" alt="NFUSpot" class="brc-prod-img">
+                    <span class="brc-prod-label">Current</span>
                 </div>
                 <div class="brc-card brc-card-highlight">
-                    <span class="brc-hl-text">NFUNest<br>社团小程序</span>
+                    <span class="brc-hl-label">accompany</span>
+                    <span class="brc-hl-days" id="daysCount">0</span>
+                    <span class="brc-hl-unit">Days</span>
+                    <div class="brc-hl-divider"></div>
+                    <span class="brc-hl-since">Since 2025.03.21</span>
                 </div>
             </div>
         </div>
@@ -241,6 +252,12 @@ window.detailPageConfig = {
     ]
 };
 document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+const startDate = new Date('2025-03-21');
+const today = new Date();
+const diffTime = Math.abs(today - startDate);
+const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+document.getElementById('daysCount').textContent = diffDays;
 </script>
 
 </body>
