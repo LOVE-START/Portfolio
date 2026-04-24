@@ -3,39 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual Page</title>
+    <title>使用手册 - NFUCourse</title>
     <link rel="stylesheet" href="../css/base/reset.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="manual-page">
 
-<div class="page-bg-layer"></div>
-
 <!-- 顶部导航栏 -->
 <header class="manual-nav">
     <div class="nav-inner">
         <div class="nav-left">
-            <span class="nav-icon">☰</span>
-            <nav class="nav-links">
-                <a href="#" class="nav-link active">GIFT</a>
-                <a href="#" class="nav-link">ALL</a>
-                <a href="#" class="nav-link">BEST</a>
-                <a href="#" class="nav-link">FAVORIT</a>
-                <a href="#" class="nav-link">NOTE</a>
-            </nav>
+            <a href="../coursedetail.html" class="nav-back-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back
+            </a>
+            <div class="nav-brand-info">
+                <h1 class="nav-main-name">NFUCourse</h1>
+                <p class="nav-sub-name">MANUAL</p>
+            </div>
         </div>
         <div class="nav-center">
-            <span class="nav-brand">JOURNALING</span>
-            <span class="nav-sep">·</span>
-            <span class="nav-sub">RECORDS</span>
+            <span class="nav-brand">M-KOCO Manual</span>
         </div>
         <div class="nav-right">
-            <div class="search-bar">
-                <input type="text" placeholder="" class="search-input">
-                <span class="search-icon">⌕</span>
-            </div>
-            <span class="nav-tool">♡</span>
-            <span class="nav-tool">⚙</span>
+            <span class="nav-tool">♥</span>
         </div>
     </div>
 </header>
@@ -44,37 +37,45 @@
 <main class="manual-main">
     <div class="magazine-layout">
 
-        <!-- ===== 左侧：大插画区域 ===== -->
+        <!-- ===== 左侧：插画 + FAQ 1 ===== -->
         <section class="left-illustration-col">
             <div class="illustration-frame">
                 <img src="../images/5.png" alt="Illustration">
             </div>
 
-            <!-- 左侧底部文字卡片 -->
-            <div class="left-bottom-card card-bordered">
+            <!-- FAQ 1: 如何查看课程？ -->
+            <div class="left-bottom-card card-bordered faq-card">
+                <img src="../images/g1.png" alt="" class="card-deco" aria-hidden="true">
                 <div class="card-header-row">
-                    <span class="card-icon-small">✦</span>
-                    <h4 class="card-title-sm">Your Collection</h4>
+                    <span class="card-icon-small">/</span>
+                    <h4 class="card-title-sm">如何查看课程？</h4>
                 </div>
                 <div class="card-body-text">
-                    <p>Keep your memories here.</p>
+                    <p>在首页可以点击现在的周数来选择不同周数哦，有交互小惊喜～点击课程卡片可以查看更多详情</p>
+                    <p class="faq-tips">点击「I WISH YOU HAPPY EVERDAY」祝福语可以获得一个屏幕能显示完整的课表哦，宝宝们自己截图做壁纸或者聊天背景就好啦！好多宝宝想我出这个功能，现在它来了～和标题一样 IT IS A GIFT FOR YOU</p>
                 </div>
                 <div class="card-footer-line"></div>
             </div>
         </section>
 
-        <!-- ===== 中间列：主要内容区 ===== -->
+        <!-- ===== 中间列：主要内容区 FAQ 2-4 ===== -->
         <section class="center-content-col">
+
+            <!-- 花朵装饰 -->
+            <img src="../images/g9.png" alt="" class="paper-flower paper-flower-tl" aria-hidden="true">
+            <img src="../images/g10.png" alt="" class="paper-flower paper-flower-br" aria-hidden="true">
+            <img src="../images/g11.png" alt="" class="paper-flower paper-flower-tr" aria-hidden="true">
+            <img src="../images/g15.png" alt="" class="paper-flower paper-flower-bl" aria-hidden="true">
 
             <!-- 大标题卡 -->
             <div class="hero-title-card">
                 <div class="hero-title-top">
-                    <span class="hero-label">the pono tateend</span>
+                    <span class="hero-label">NFUCourse 使用指南</span>
                 </div>
-                <h1 class="hero-main-title">He pono tateend</h1>
+                <h1 class="hero-main-title">新手必看攻略</h1>
                 <p class="hero-subtitle-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    欢迎来到 南苑Course！想为你提供轻松愉悦的大学生活体验，
+                    希望能在这里找到属于自己的节奏 Go go go !
                 </p>
                 <div class="hero-divider-line"></div>
             </div>
@@ -82,102 +83,106 @@
             <!-- 信息标签行 -->
             <div class="info-tags-row">
                 <div class="info-tag-item">
-                    <span class="tag-icon">◎</span>
-                    <span class="tag-label">MAIN</span>
+                    <span class="tag-icon">○</span>
+                    <span class="tag-label">Questions</span>
                 </div>
                 <div class="info-tag-item">
-                    <span class="tag-label">CATEGORY</span>
-                    <span class="tag-icon tag-edit">✎</span>
+                    <span class="tag-label">Features</span>
+                    <span class="tag-icon tag-edit">/</span>
                 </div>
             </div>
 
-            <!-- 文字段落卡 -->
-            <div class="text-block-card card-bordered">
+            <!-- FAQ 2: 如何更新课表？ -->
+            <div class="text-block-card card-bordered faq-card">
+                <div class="faq-card-header">
+                    <span class="faq-icon">/</span>
+                    <h4 class="faq-title">如何更新课表？</h4>
+                </div>
                 <p class="tb-paragraph">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                    accusantium doloremque laudantium, totam rem aperiam eaque ipsa,
-                    quae ab illo inventore veritatis et quasi architecto beatae vitae
-                    dicta sunt explicabo.
+                    在个人页面点击「隐私页面 Privacy | 隐私」有详细说明哦，在那里清除缓存然后再次登录课表就会更新啦～小苑非常贴心的帮你在本地记住了账号密码哦，再次登录是不用输入的
                 </p>
             </div>
 
-            <!-- 引用风格卡 -->
-            <div class="quote-card card-bordered">
+            <!-- FAQ 3: 如何添加笔记？ -->
+            <div class="quote-card card-bordered faq-card">
+                <img src="../images/g3.png" alt="" class="card-deco" aria-hidden="true">
+                <div class="faq-card-header">
+                    <span class="faq-icon">/</span>
+                    <h4 class="faq-title faq-quote-title">如何添加笔记？</h4>
+                </div>
                 <p class="quote-text">
-                    Love is not about how many days, months, or years you've been together.
-                    It's about how much you love each other every day.
+                    在『课程详情』页面右下角有一个铅笔图标哦，点击这个图标就可以添加课程对应的笔记啦～可以把老师的期末要求、平时的作业和一些课程有关的事情记在这里哦。希望这个功能可以带给你一些方便，不会忘掉重要的事情，我想这应该也是一个很治愈的过程
                 </p>
             </div>
 
             <!-- 底部按钮组 -->
             <div class="button-group-row">
-                <button class="pill-btn pill-active">HOME</button>
-                <button class="pill-btn">ABOUT</button>
-                <button class="pill-btn">GALLERY</button>
+                <button class="pill-btn pill-active">Little</button>
+                <button class="pill-btn">Beautiful</button>
+                <button class="pill-btn">Things</button>
             </div>
         </section>
 
-        <!-- ===== 右侧：辅助信息区 ===== -->
+        <!-- ===== 右侧：FAQ 5-6 + 快捷操作 ===== -->
         <section class="right-info-col">
 
-            <!-- 顶部状态卡 -->
-            <div class="status-card card-bordered">
+            <!-- FAQ 5: 如何查看同班同学？ -->
+            <div class="status-card card-bordered faq-card">
+                <img src="../images/g4.png" alt="" class="card-deco" aria-hidden="true">
                 <div class="status-header">
-                    <span class="status-badge">Owned</span>
-                    <span class="status-actions">♥ ⌄</span>
+                    <span class="status-badge">Classmate</span>
+                    <span class="status-actions">/</span>
                 </div>
-                <h3 class="status-title">Vaan pootatien le booti</h3>
+                <h3 class="status-title">如何查看同班同学？</h3>
                 <p class="status-desc">
-                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                    在『课程详情』页面左下角有邮筒图标哦，点击这个图标就可以查看同班同学啦～因为新教务系统没有统计同班同学，所以这个数据是小程序自然统计的哦，只能统计小程序的使用人数。
                 </p>
+                <p class="faq-tips-small">期待南苑Course使用人数能和学习通一样多，到那一天小C的数据就准确啦～把小程序分享给自己的好友，ta使用的那一刻数据就会同步哦！准确的数据要去学习通看哦~</p>
                 <div class="status-meta-row">
-                    <span class="meta-item">★ 4.8</span>
+                    <span class="meta-item">★ popular</span>
                     <span class="meta-sep">·</span>
-                    <span class="meta-item">128 reviews</span>
+                    <span class="meta-item">warm heart</span>
                 </div>
             </div>
 
-            <!-- 中间图标+文字卡 -->
-            <div class="feature-card card-bordered">
+            <!-- FAQ 6: 如何查看成绩详情？ -->
+            <div class="feature-card card-bordered faq-card">
+                <img src="../images/g6.png" alt="" class="card-deco" aria-hidden="true">
                 <div class="feature-icon-circle">
-                    <span class="feature-emoji">🌸</span>
+                    <img src="../images/whitecourse.png" alt="" class="feature-emoji-img">
                 </div>
-                <h4 class="feature-card-title">Coco & Fivie dana</h4>
+                <h4 class="feature-card-title">如何查看成绩详情？</h4>
                 <p class="feature-card-text">
-                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                    consectetur, adipisci velit.
+                    在「GRADE 成绩」页面点开想查看的课程成绩，课程类型的旁边会有一个小云朵图标，点开小云朵图标就可以查看详细的平时分、期末成绩和课程总评啦～
                 </p>
                 <div class="feature-tag-row">
-                    <span class="ftag">Collection</span>
-                    <span class="ftag ftag-light">Personal</span>
+                    <span class="ftag">Grade Query</span>
+                    <span class="ftag ftag-light">Credit Statistics</span>
                 </div>
             </div>
 
-            <!-- 底部小卡片组 -->
+            <!-- 快捷功能入口 -->
             <div class="mini-cards-grid">
                 <div class="mini-card mc-brown">
-                    <span class="mc-icon">◈</span>
-                    <span class="mc-label">Archive</span>
+                    <img class="mc-label" src="../images/qm1.png" alt="">
                 </div>
                 <div class="mini-card mc-beige">
-                    <span class="mc-icon">✎</span>
-                    <span class="mc-label">Notes</span>
+                    <img class="mc-label" src="../images/qm2.png" alt="">
                 </div>
                 <div class="mini-card mc-warm">
-                    <span class="mc-icon">+</span>
-                    <span class="mc-label">Add</span>
+                    <span class="mc-label">❤️</span>
                 </div>
             </div>
 
-            <!-- 最底部信息条 -->
+            <!-- 底部信息条 -->
             <div class="bottom-info-strip card-bordered">
                 <div class="bis-left">
                     <div class="bis-avatar">
-                        <img src="../images/d1.png" alt="">
+                        <img src="../images/zeronightlogo.png" alt="">
                     </div>
                     <div class="bis-text">
-                        <span class="bis-name">Author Name</span>
-                        <span class="bis-date">April 2026</span>
+                        <span class="bis-name">NFUCourse</span>
+                        <span class="bis-date">To Be Continue...</span>
                     </div>
                 </div>
                 <div class="bis-right">
@@ -186,23 +191,72 @@
             </div>
         </section>
     </div>
+
+    <!-- ===== 底部新栏目区域：FAQ 7 + 功能概览 ===== -->
+    <div class="bottom-sections-layout">
+
+        <!-- 左侧：装饰图片 -->
+        <section class="bottom-left-col">
+            <div class="toc-image-frame">
+                <img src="../images/card2.png" alt="Table of Contents">
+                <img src="../images/whitecourse.png" alt="" class="toc-stamp-overlay" aria-hidden="true">
+                <div class="toc-artistic-text">
+                    <span class="art-text-line">Waiting</span>
+                    <span class="art-text-line art-text-sub">for you</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 中间：FAQ 7 更多功能探索 -->
+        <section class="bottom-center-col">
+
+            <!-- FAQ 4: 如何订阅课程提醒？ -->
+            <div class="text-block-card card-bordered faq-card faq-highlight">
+                <img src="../images/g7.png" alt="" class="card-deco" aria-hidden="true">
+                <div class="faq-card-header">
+                    <span class="faq-icon">/</span>
+                    <h4 class="faq-title">如何订阅课程提醒？</h4>
+                </div>
+                <p class="tb-paragraph">
+                    在设置页面打开『课程提醒』即可在上课前 15 分钟收到通知哦～
+                </p>
+                <p class="faq-tips">点击设置页底下的时间框可以解压，也可以增加订阅同意次数哦！由于微信的订阅消息限制，点击一次同意只能发送一次课程提醒哦～</p>
+            </div>
+
+            <!-- M-KOCO 标识 -->
+            <div class="text-block-card card-bordered" style="padding: 12px 20px; display: flex; align-items: center; gap: 12px; position: relative; overflow: visible; background: rgba(200, 185, 160, 0.35);">
+                <img src="../images/g17.png" alt="" class="card-deco" aria-hidden="true" style="position: static; width: 24px; height: 24px; object-fit: contain;">
+                <span style="font-size: 14px; font-weight: 600; letter-spacing: 0.5px;">M-KOCO</span>
+                <img src="../images/g9.png" alt="" class="card-deco" aria-hidden="true" style="position: absolute; bottom: 0; left: 100px; transform: translateY(-3px);">
+                <img src="../images/g11.png" alt="" class="card-deco" aria-hidden="true" style="position: absolute; bottom: -8px; left: 300px; transform: translateY(-3px);">
+                <img src="../images/g2.png" alt="" class="card-deco" aria-hidden="true" style="position: absolute; bottom: 0px; left: 200px; transform: translateY(-3px);">
+            </div>
+        </section>
+
+        <!-- ===== 右侧：信封卡片 ===== -->
+        <section class="bottom-right-col">
+
+            <div class="envelope-card card-bordered">
+                <img src="../images/card3.png" alt="" class="envelope-card-img">
+                <div class="envelope-card-body">
+                    <p class="envelope-text">南苑Course 是一个温暖的小工具，想安静地陪你走过每一个学期。从清晨的第一节课，到傍晚收拾好一天的心情，课表、成绩、笔记与提醒，都已为你准备好。把零碎的校园日常，慢慢变得清晰、有序，也多一点点安心。
+                                             如果你恰好也喜欢这样的它，欢迎把这份小小的真心分享给身边的同学，让我们一起成为这个大家庭的一员。</p>
+                    <div class="envelope-meta">
+                        <span class="envelope-date">2026.04</span>
+                        <span class="envelope-seal">+</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
 </main>
 
-<!-- 底部装饰层 -->
-<div class="bottom-decorations">
-    <div class="bd-flower bd-flower-1">
-        <svg viewBox="0 0 100 100" width="90" height="90"><path d="M50,15 C62,22 72,16 78,6 C74,26 86,36 98,36 C78,38 66,48 66,68 C66,48 54,38 34,38 C54,36 60,24 50,15Z" fill="#D4B896" opacity=".3"/><circle cx="50" cy="42" r="10" fill="#E0CBA8" opacity=".2"/></svg>
-    </div>
-    <div class="bd-flower bd-flower-2">
-        <svg viewBox="0 0 80 80" width="70" height="70"><path d="M40,12 C50,18 58,14 63,6 C59,22 69,30 78,30 C61,32 52,40 52,56 C52,40 43,32 27,32 C43,30 48,21 40,12Z" fill="#C4B89E" opacity=".25"/></svg>
-    </div>
-    <div class="bd-leaf bd-leaf-1">
-        <svg viewBox="0 0 100 60" width="85" height="50"><path d="M5,55 Q30,10 95,5 Q60,35 5,55Z" fill="#B5C4A8" opacity=".25"/><path d="M10,52 Q32,18 88,10" stroke="#9EB88E" stroke-width="1" fill="none" opacity=".3"/></svg>
-    </div>
-    <div class="bd-leaf bd-leaf-2">
-        <svg viewBox="0 0 80 80" width="65" height="65"><path d="M10,70 Q25,30 70,15 Q45,50 10,70Z" fill="#A8BC98" opacity=".2"/><path d="M15,65 Q28,36 64,20" stroke="#8AA888" stroke-width="1" fill="none" opacity=".25"/></svg>
-    </div>
-</div>
+<!-- Footer -->
+<footer class="detail-footer">
+    <p>&copy; <span id="currentYear"></span> NFU Mini Programs · Built with ♥ by Zero__Night</p>
+</footer>
 
 </body>
 </html>

@@ -207,7 +207,7 @@
             <div class="brc-top-row">
                 <span class="brc-pill">Collection</span>
                 <div class="brc-search-bar">
-                    <span class="brc-search-placeholder">◆ Project Completed ◆ May 24, 2026 00:52</span>
+                    <span class="brc-search-placeholder">Wechat:Zero__Night · Email:candy_night@163.com</span>
                 </div>
             </div>
             <div class="brc-grid">
@@ -245,6 +245,7 @@
 </footer>
 
 <script src="js/detail-page.js"></script>
+<script src="js/modules/image-scaler.js"></script>
 <script>
 window.detailPageConfig = {
     gallery: [
@@ -260,6 +261,12 @@ const today = new Date();
 const diffTime = Math.abs(today - startDate);
 const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 document.getElementById('daysCount').textContent = diffDays;
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.ImageScaler) {
+        ImageScaler.init();
+    }
+});
 </script>
 
 </body>

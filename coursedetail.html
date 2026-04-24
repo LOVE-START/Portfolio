@@ -205,7 +205,7 @@
             <div class="brc-top-row">
                 <span class="brc-pill">Collection</span>
                 <div class="brc-search-bar">
-                    <span class="brc-search-placeholder">◆ Project Completed ◆ May 24, 2026 00:52</span>
+                    <span class="brc-search-placeholder">Wechat:Zero__Night · Email:candy_night@163.com</span>
                 </div>
             </div>
             <div class="brc-grid">
@@ -220,10 +220,10 @@
                         </div>
                     </div>
                 </a>
-                <div class="brc-card brc-card-product">
+                <a href="manual/coursemanual.html" class="brc-card brc-card-product">
                     <img src="images/whitecourse.png" alt="NFUCourse" class="brc-prod-img">
                     <span class="brc-prod-label">Current</span>
-                </div>
+                </a>
                 <div class="brc-card brc-card-highlight">
                     <span class="brc-hl-label">accompany</span>
                     <span class="brc-hl-days" id="daysCount">0</span>
@@ -243,6 +243,7 @@
 </footer>
 
 <script src="js/detail-page.js"></script>
+<script src="js/modules/image-scaler.js"></script>
 <script>
 window.detailPageConfig = {
     gallery: [
@@ -258,6 +259,12 @@ const today = new Date();
 const diffTime = Math.abs(today - startDate);
 const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 document.getElementById('daysCount').textContent = diffDays;
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.ImageScaler) {
+        ImageScaler.init();
+    }
+});
 </script>
 
 </body>
