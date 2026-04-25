@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NFUSpot - 南苑地图 | M-KOCO</title>
-    <link rel="icon" href="https://nfu2006.asia/logo.png" type="image/png">
+    <link rel="icon" href="images/spotlogo.png" type="image/png">
 
     <link rel="stylesheet" href="css/base/variables.css">
     <link rel="stylesheet" href="css/base/reset.css">
@@ -74,9 +74,7 @@
             <div class="left-text-block">
                 <h4 class="ltb-heading">About This Project</h4>
                 <p class="ltb-text">
-                    南苑地图小程序，一键探索校园每个角落，再也不会迷路。
-                    教学楼、食堂、图书馆、宿舍楼，想去哪里都能找到，让校园生活更加便捷。
-                    迷路是新生最常遇到的困扰，希望这个小程序能成为你在校园里的贴心向导。
+                    南苑Spot 迷路是我们初到校园最常遇到的困扰。希望SPOT能成为校园里的贴心向导，帮助你轻松找到每一个目的地。
                 </p>
                 <span class="ltb-more">more →</span>
             </div>
@@ -86,8 +84,8 @@
                 <div class="lsc-color-panel">
                     <h5 class="lsc-title">Key Features</h5>
                     <ul class="lsc-list">
-                        <li>交互式校园地图浏览</li>
-                        <li>智能路径规划与导航</li>
+                        <li>南苑课程地图</li>
+                        <li>智能路径规划</li>
                         <li>建筑详情与设施查询</li>
                     </ul>
                     <span class="lsc-tag">v1.0</span>
@@ -101,7 +99,7 @@
             <div class="left-quote-block">
                 <span class="lqb-by">By</span>
                 <p class="lqb-text">
-                    让你轻松找到每一个目的地，不再为找路而烦恼
+                   希望复杂的教学楼名称不再阻挡我们前进的脚步
                 </p>
                 <span class="lqb-signature">✦ Zero__Night</span>
             </div>
@@ -123,7 +121,7 @@
             <div class="project-title-section">
                 <div class="title-decor-line"></div>
                 <h2 class="project-title">NFUSPOT</h2>
-                <p class="project-subtitle">南苑地图 · 一键探索校园每个角落</p>
+                <p class="project-subtitle">南苑地图· 在校园的每一处相遇，都有意义</p>
             </div>
 
             <!-- Action Pills -->
@@ -220,16 +218,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="brc-card brc-card-product">
+                <div class="brc-card brc-card-product brc-card-coming">
                     <img src="images/whitemap.png" alt="NFUSpot" class="brc-prod-img">
-                    <span class="brc-prod-label">Current</span>
+                    <span class="brc-prod-label">Coming Soon</span>
+                    <div class="brc-prod-progress">
+                        <div class="brc-progress-bar" style="--progress: 75%"></div>
+                    </div>
                 </div>
-                <div class="brc-card brc-card-highlight">
-                    <span class="brc-hl-label">accompany</span>
+                <div class="brc-card brc-card-highlight brc-card-dev">
+                    <span class="brc-hl-label">developing</span>
                     <span class="brc-hl-days" id="daysCount">0</span>
                     <span class="brc-hl-unit">Days</span>
                     <div class="brc-hl-divider"></div>
-                    <span class="brc-hl-since">Since 2025.03.21</span>
+                    <span class="brc-hl-since">Expected 2025.06</span>
                 </div>
             </div>
         </div>
@@ -254,7 +255,7 @@ window.detailPageConfig = {
 };
 document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-const startDate = new Date('2025-03-21');
+const startDate = new Date('2026-01-21');
 const today = new Date();
 const diffTime = Math.abs(today - startDate);
 const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));

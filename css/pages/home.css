@@ -145,15 +145,6 @@
     white-space: nowrap;
 }
 
-/* ========== 主内容区 ========== */
-.main-content {
-    flex: 1;
-    padding: 0 var(--page-padding) 60px;
-    max-width: var(--page-max-width);
-    width: 100%;
-    margin: 0 auto;
-}
-
 /* ========== Hero 大幅插画展示区（全宽） ========== */
 .hero-section {
     margin: 24px var(--page-padding);
@@ -176,71 +167,6 @@
     display: block;
     object-fit: cover;
     object-position: center top;
-}
-
-/* Hero 内联视觉（详情页复用） */
-.hero-visual-inline {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    padding: 40px 32px;
-}
-
-.hero-logo-ring {
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
-    background: linear-gradient(145deg, #FFF5F0, #FFE8E0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    box-shadow:
-        0 4px 20px rgba(224, 122, 122, 0.12),
-        inset 0 2px 6px rgba(255, 255, 255, 0.7);
-}
-
-.hero-logo {
-    width: 68px;
-    height: 68px;
-    object-fit: contain;
-    border-radius: 16px;
-}
-
-.hero-info {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.hero-badge {
-    display: inline-flex;
-    align-self: flex-start;
-    font-family: var(--font-mono);
-    font-size: 9px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--color-primary-dark);
-    background: rgba(224, 122, 122, 0.1);
-    padding: 3px 12px;
-    border-radius: 20px;
-    margin-bottom: 2px;
-}
-
-.hero-title {
-    font-family: var(--font-display);
-    font-size: clamp(26px, 4vw, 36px);
-    font-weight: 600;
-    color: var(--color-text);
-    margin: 0;
-    letter-spacing: 1px;
-}
-
-.hero-subtitle {
-    font-size: 14px;
-    color: var(--color-text-muted);
-    margin: 0;
-    line-height: 1.6;
 }
 
 /* Hero 四角装饰 */

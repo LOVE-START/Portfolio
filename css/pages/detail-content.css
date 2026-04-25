@@ -849,19 +849,6 @@
     font-weight: 600;
 }
 
-.brc-card-tag {
-    display: inline-block;
-    font-family: 'PingFang SC', -apple-system, 'Microsoft YaHei', sans-serif;
-    font-size: 10px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #fff;
-    background: #E6A87B;
-    padding: 3px 10px;
-    border-radius: 6px;
-    margin-bottom: 10px;
-}
-
 .brc-card-desc {
     font-size: 11px;
     color: #5C4B44;
@@ -891,6 +878,39 @@
     font-size: 8px;
     color: #D9B89B;
     letter-spacing: 1px;
+}
+
+.brc-card-coming {
+    background: linear-gradient(135deg, #FFFEFB 0%, #FFF5EB 100%);
+    border-color: rgba(230, 168, 123, 0.25);
+}
+
+.brc-card-coming .brc-prod-label {
+    color: #E6A87B;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+}
+
+.brc-prod-progress {
+    width: 100%;
+    height: 3px;
+    background: rgba(92, 75, 68, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+.brc-progress-bar {
+    height: 100%;
+    width: var(--progress, 75%);
+    background: linear-gradient(90deg, #E6A87B, #D9B89B);
+    border-radius: 2px;
+    animation: progressPulse 2s ease-in-out infinite;
+}
+
+@keyframes progressPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
 }
 
 /* About Card - Special Design */
@@ -1011,6 +1031,30 @@
     font-style: italic;
 }
 
+.brc-card-dev {
+    background: linear-gradient(135deg, #D9B89B 0%, #E6A87B 100%);
+}
+
+.brc-card-dev .brc-hl-label {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.brc-card-dev .brc-hl-days {
+    color: #fff;
+}
+
+.brc-card-dev .brc-hl-unit {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.brc-card-dev .brc-hl-divider {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.brc-card-dev .brc-hl-since {
+    color: rgba(255, 255, 255, 0.7);
+}
+
 /* ============================================================
    COLLABORATION SECTION (联名展示 - 嵌入右侧卡片区域)
    ============================================================ */
@@ -1081,23 +1125,6 @@
 }
 
 .brc-cb-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.brc-cb-logo-featured {
-    background: linear-gradient(135deg, #E6A87B 0%, #D9B89B 100%);
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 14px rgba(230, 168, 123, 0.35);
-}
-
-.brc-cb-logo-zeronight {
-    background: transparent;
-    border: 1px solid rgba(92, 75, 68, 0.1);
-}
-
-.brc-cb-logo-zeronight img {
     width: 100%;
     height: 100%;
     object-fit: contain;

@@ -54,7 +54,7 @@ const PAGES_CONFIG = {
             { type: 'image', src: 'images/p5.png', alt: 'Nest Preview 2', label: '02' },
             { type: 'image', src: 'images/p6.png', alt: 'Nest Preview 3', label: '03' }
         ],
-        overview: '「南苑Nest」，发现校园里每一个有趣的社团 在这里找到同频的好友 一起疯 一起追逐热爱 让大学生活更加精彩纷呈闪闪发光',
+        overview: '「南苑Nest」，发现校园里每一个有趣的社团 在这里找到同频的伙伴 一起疯 一起追逐热爱 让大学生活更加精彩纷呈闪闪发光',
         highlight: '这一次 我想和你们一起 完成这个伟大而浪漫的奇迹',
         features: ['社团信息展示', '活动报名与提醒', '招新系统管理'],
         footerTags: ['WeChat Mini Program', '2026']
@@ -83,8 +83,8 @@ const PAGES_CONFIG = {
             { type: 'image', src: 'images/p9.png', alt: 'Yummy Preview 3', label: '03' }
         ],
         overview: '「南苑Yummy」期待和你一起，把校园里的每一处烟火气，化作回忆里的最温暖画映。一份图鉴，一段故事，一起走过校园里最美好的日子。',
-        highlight: '美食是生活中最治愈的存在。希望这个小程序能帮你发现校园里的隐藏美味，让每一餐都成为期待，而不仅仅是果腹。',
-        features: ['校园美食地图与导航', '真实用户评价与评分', '个性化美食推荐'],
+        highlight: '美食是生活中最治愈的存在。希望YUMMY能帮你发现校园里的隐藏美味，让每一餐都成为期待。',
+        features: ['校园美食图鉴', '真实评分与评论', '个性化美食推荐'],
         footerTags: ['WeChat Mini Program', 'In Development']
     },
     spot: {
@@ -106,13 +106,13 @@ const PAGES_CONFIG = {
         contactInSidebar: true,
         accentColor: 'blue',
         gallery: [
-            { type: 'placeholder-blue', icon: 'galleryMapPin', label: 'Campus Map', num: '01' },
-            { type: 'placeholder-blue-light', icon: 'galleryNavigation', label: 'Navigation', num: '02' },
-            { type: 'placeholder-warm', icon: 'galleryMonitor', label: 'Buildings', num: '03' }
+            { type: 'image', src: 'images/p5.png', alt: 'Spot Preview 1', label: '01' },
+            { type: 'image', src: 'images/p8.png', alt: 'Spot Preview 2', label: '02' },
+            { type: 'image', src: 'images/p3.jpeg', alt: 'Spot Preview 3', label: '03' }
         ],
-        overview: '南苑地图小程序，一键探索校园每个角落，再也不会迷路。教学楼、食堂、图书馆、宿舍楼，想去哪里都能找到，让校园生活更加便捷。',
-        highlight: '迷路是新生最常遇到的困扰。希望这个小程序能成为你在校园里的贴心向导，让你轻松找到每一个目的地，不再为找路而烦恼。',
-        features: ['交互式校园地图浏览', '智能路径规划与导航', '建筑详情与设施查询'],
+        overview: '「南苑Spot」· 在校园的每一处相遇，都有意义',
+        highlight: '迷路是我们初到校园最常遇到的困扰。希望SPOT能成为校园里的贴心向导，让你轻松找到每一个目的地。',
+        features: ['校园课表地图', '智能路径规划', '建筑详情与设施查询'],
         footerTags: ['WeChat Mini Program', 'In Development']
     }
 };

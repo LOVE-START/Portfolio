@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corols - About Course</title>
+    <title>About Course | M-KOCO</title>
+    <link rel="icon" href="../images/courselogo.png" type="image/png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -207,8 +208,15 @@
             </div>
         </section>
     </main>
+    <footer class="detail-footer">
+        <p>&copy; <span id="currentYear"></span> NFU Mini Programs · Built with ♥ by Zero__Night</p>
+    </footer>
 
     <!-- Main JavaScript -->
     <script src="js/main.js"></script>
+    <script>
+        // 动态设置当前年份
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

@@ -461,14 +461,6 @@ body {
     gap: 0.4rem;
 }
 
-.item-about {
-     margin-left: 55px;  
-}
-
-.item-audience {
-    margin-left: -15px;
-}
-
 .item-text {
     font-size: 0.82rem;
     line-height: 1.65;
@@ -733,11 +725,6 @@ body {
     background: linear-gradient(90deg, transparent, var(--brown-pale), transparent);
     margin: 0.4rem auto;
     opacity: 0.6;
-}
-
-.item-middle {
-    margin-left: 0;
-    text-align: center;
 }
 
 /* 信纸风格 - Card 2 */
@@ -1109,4 +1096,25 @@ body {
     .section-title {
         font-size: 2.2rem;
     }
+}
+
+/* ===================================
+   Footer Styles
+   =================================== */
+
+.detail-footer {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 24px 20px 32px;
+
+    background: transparent;
+}
+
+.detail-footer p {
+    font-family: 'PingFang SC', -apple-system, 'Microsoft YaHei', sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #D9B89B;
+    margin: 0;
 }
