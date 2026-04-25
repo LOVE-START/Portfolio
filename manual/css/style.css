@@ -21,6 +21,60 @@
     --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
+/* ===== 页面进入动画 ===== */
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes staggerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* ===== 全局 & 背景 ===== */
 .manual-page {
     background-color: var(--manual-bg);
@@ -29,6 +83,7 @@
     min-height: 100vh;
     overflow-x: visible;
     position: relative;
+    animation: pageEnter 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 /* ===== 顶部导航栏 ===== */
@@ -43,6 +98,7 @@
     height: 44px;
     display: flex;
     align-items: center;
+    animation: slideDown 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
 }
 
 .nav-inner {
@@ -139,6 +195,7 @@
     position: relative;
     z-index: 1;
     padding: 28px clamp(24px, 4vw, 56px) 60px;
+    animation: fadeInScale 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
 }
 
 .magazine-layout {
@@ -170,6 +227,7 @@
     display: flex;
     flex-direction: column;
     gap: 18px;
+    animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
 }
 
 .illustration-frame {
@@ -256,6 +314,7 @@
         21% 99%,    17% 100%,   13% 98.5%,   9% 100%,
         5% 99%,     2% 100%,    0% 97%
     );
+    animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
 }
 
 .center-content-col::before {
@@ -492,6 +551,7 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
+    animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
 }
 
 /* 状态卡 */
@@ -718,6 +778,7 @@ img.mc-label {
     grid-template-columns: 320px 1fr auto;
     gap: 22px;
     align-items: stretch;
+    animation: slideUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
 }
 
 /* 左侧目录图片 */
@@ -984,6 +1045,31 @@ img.mc-label {
     position: relative;
     overflow: hidden;
     flex-grow: 1;
+    animation: staggerFadeIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.faq-card:nth-child(1) {
+    animation-delay: 0.7s;
+}
+
+.faq-card:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+.faq-card:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+.faq-card:nth-child(4) {
+    animation-delay: 1s;
+}
+
+.faq-card:nth-child(5) {
+    animation-delay: 1.1s;
+}
+
+.faq-card:nth-child(6) {
+    animation-delay: 1.2s;
 }
 
 .card-deco {
@@ -1076,6 +1162,38 @@ img.mc-label {
 .faq-highlight {
     background: linear-gradient(135deg, rgba(255,252,246,.95) 0%, rgba(245,241,233,.9) 100%);
     border-color: rgba(196, 168, 130, 0.35);
+}
+
+/* ===== 无障碍支持 - 减少动画 ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .manual-page {
+        animation: none !important;
+    }
+    
+    .manual-nav,
+    .manual-main,
+    .left-illustration-col,
+    .center-content-col,
+    .right-info-col,
+    .bottom-sections-layout,
+    .faq-card {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    .paper-flower {
+        animation: none !important;
+    }
 }
 
 
