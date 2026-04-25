@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Course | M-KOCO</title>
-    <link rel="icon" href="https://fastly.jsdelivr.net/gh/LOVE-START/Portfolio@main/images/courselogo.png" type="image/png">
+    <link rel="icon" data-favicon="course" type="image/png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +13,7 @@
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+    <script src="../js/data/image-config.js"></script>
 </head>
 <body>
     <!-- Top Brand Bar -->
@@ -42,7 +43,7 @@
                 <article class="illustration-card">
                     <button class="close-btn" aria-hidden="true"></button>
                     <div class="card-image-wrapper">
-                        <img src="https://fastly.jsdelivr.net/gh/LOVE-START/Portfolio@main/images/beautiful2.png" alt="Cat & Flowers" class="card-image">
+                        <img data-img="beautiful.cat1" alt="Cat & Flowers" class="card-image">
                     </div>
                     <div class="card-labels">
                         <div class="label-tags">
@@ -56,7 +57,7 @@
                 <article class="illustration-card">
                     <button class="close-btn pin-left" aria-hidden="true"></button>
                     <div class="card-image-wrapper">
-                        <img src="https://fastly.jsdelivr.net/gh/LOVE-START/Portfolio@main/images/beautiful3.png" alt="Cat & Plants" class="card-image">
+                        <img data-img="beautiful.cat2" alt="Cat & Plants" class="card-image">
                     </div>
                     <div class="card-labels">
                         <div class="label-tags">
@@ -106,7 +107,7 @@
             <!-- Right Column: Main Illustration -->
             <aside class="right-column">
                 <figure class="main-illustration">
-                    <img src="https://fastly.jsdelivr.net/gh/LOVE-START/Portfolio@main/images/grilcat.png" alt="Course Heart Character" class="illustration-image">
+                    <img data-img="characters.girlCat" alt="Course Heart Character" class="illustration-image">
                 </figure>
             </aside>
         </div>
@@ -121,7 +122,7 @@
                 <article class="feature-card card-postcard">
                     <div class="postcard-front">
                         <div class="feature-image-wrapper">
-                            <img src="https://fastly.jsdelivr.net/gh/LOVE-START/Portfolio@main/images/d11.png" alt="Botanical Illustration" class="feature-image">
+                            <img data-img="gallery.d11" alt="Botanical Illustration" class="feature-image">
                         </div>
                         <div class="postcard-stamp">
                             <span class="stamp-icon">✉</span>
@@ -209,14 +210,12 @@
         </section>
     </main>
     <footer class="detail-footer">
-        <p>&copy; <span id="currentYear"></span> NFU Mini Programs · Built with ♥ by Zero__Night</p>
+        <p>&copy; NFU Mini Programs · Built with ♥ by Zero__Night</p>
     </footer>
 
+    <!-- Image Initializer -->
+    <script src="../js/modules/image-initializer.js"></script>
     <!-- Main JavaScript -->
     <script src="js/main.js"></script>
-    <script>
-        // 动态设置当前年份
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
 </body>
 </html>

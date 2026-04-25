@@ -252,7 +252,7 @@ const ShowcaseRenderer = (function() {
     function renderFooter() {
         return `
     <footer class="showcase-footer">
-        <p>&copy; ${new Date().getFullYear()} NFU Mini Programs · Built with ♥ by Zero__Night</p>
+        <p>&copy; NFU Mini Programs · Built with ♥ by Zero__Night</p>
     </footer>`;
     }
 
